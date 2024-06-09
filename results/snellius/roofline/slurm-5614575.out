@@ -1,0 +1,205 @@
+Restoring modules from user's ert
+
+Reading configuration from 'Config/config.snellius.genoa.01'...
+  Using existing results directory, Results.snellius.genoa.01...
+
+*** WARNING ***
+**
+**  Making new run directory, 'Results.snellius.genoa.01/Run.002',
+**    because the current connfiguration file, 'Config/config.snellius.genoa.01' 
+**    doesn't match the configuration files, 'config.ert', under:
+**
+**      Results.snellius.genoa.01/Run.001
+**
+*** WARNING ***
+    mkdir Results.snellius.genoa.01/Run.002 
+    cp Config/config.snellius.genoa.01 Results.snellius.genoa.01/Run.002/config.ert 
+
+FLOP count 1...
+    mkdir Results.snellius.genoa.01/Run.002/FLOPS.001 
+
+  Building ERT core code...
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=1 -DERT_ALIGN=32 -DERT_MEMORY_MAX=85496692736 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Drivers/driver1.cxx -o Results.snellius.genoa.01/Run.002/FLOPS.001/driver1.o 
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=1 -DERT_ALIGN=32 -DERT_MEMORY_MAX=85496692736 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Kernels/kernel1.cxx -o Results.snellius.genoa.01/Run.002/FLOPS.001/kernel1.o 
+    mpic++ Results.snellius.genoa.01/Run.002/FLOPS.001/driver1.o Results.snellius.genoa.01/Run.002/FLOPS.001/kernel1.o -o Results.snellius.genoa.01/Run.002/FLOPS.001/driver1.kernel1 
+
+  Running ERT core code...
+    mkdir Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0064 
+    MPI 64
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.001/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0064/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.001/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0064/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.001/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0064/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.001/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0064/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.001/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0064/try.005 2>&1 
+    touch Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0064/run.done 
+
+    mkdir Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0128 
+    MPI 128
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.genoa.01/Run.002/FLOPS.001/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0128/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.genoa.01/Run.002/FLOPS.001/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0128/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.genoa.01/Run.002/FLOPS.001/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0128/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.genoa.01/Run.002/FLOPS.001/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0128/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.genoa.01/Run.002/FLOPS.001/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0128/try.005 2>&1 
+    touch Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0128/run.done 
+
+  Processing results...
+    Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0064
+    cat Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0064/try.* | ./Scripts/preprocess.py > Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0064/pre
+    ./Scripts/maximum.py < Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0064/pre > Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0064/max
+    ./Scripts/summary.py < Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0064/max > Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0064/sum
+
+    Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0128
+    cat Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0128/try.* | ./Scripts/preprocess.py > Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0128/pre
+    ./Scripts/maximum.py < Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0128/pre > Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0128/max
+    ./Scripts/summary.py < Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0128/max > Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0128/sum
+
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0064/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0064/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0064/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0064/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0128/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0128/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0128/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.001/MPI.0128/graph4.gnu"' | gnuplot
+
+
+FLOP count 2...
+    mkdir Results.snellius.genoa.01/Run.002/FLOPS.002 
+
+  Building ERT core code...
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=2 -DERT_ALIGN=32 -DERT_MEMORY_MAX=85496692736 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Drivers/driver1.cxx -o Results.snellius.genoa.01/Run.002/FLOPS.002/driver1.o 
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=2 -DERT_ALIGN=32 -DERT_MEMORY_MAX=85496692736 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Kernels/kernel1.cxx -o Results.snellius.genoa.01/Run.002/FLOPS.002/kernel1.o 
+    mpic++ Results.snellius.genoa.01/Run.002/FLOPS.002/driver1.o Results.snellius.genoa.01/Run.002/FLOPS.002/kernel1.o -o Results.snellius.genoa.01/Run.002/FLOPS.002/driver1.kernel1 
+
+  Running ERT core code...
+    mkdir Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0064 
+    MPI 64
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.002/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0064/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.002/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0064/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.002/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0064/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.002/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0064/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.002/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0064/try.005 2>&1 
+    touch Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0064/run.done 
+
+    mkdir Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0128 
+    MPI 128
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.genoa.01/Run.002/FLOPS.002/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0128/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.genoa.01/Run.002/FLOPS.002/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0128/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.genoa.01/Run.002/FLOPS.002/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0128/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.genoa.01/Run.002/FLOPS.002/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0128/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.genoa.01/Run.002/FLOPS.002/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0128/try.005 2>&1 
+    touch Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0128/run.done 
+
+  Processing results...
+    Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0064
+    cat Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0064/try.* | ./Scripts/preprocess.py > Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0064/pre
+    ./Scripts/maximum.py < Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0064/pre > Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0064/max
+    ./Scripts/summary.py < Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0064/max > Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0064/sum
+
+    Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0128
+    cat Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0128/try.* | ./Scripts/preprocess.py > Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0128/pre
+    ./Scripts/maximum.py < Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0128/pre > Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0128/max
+    ./Scripts/summary.py < Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0128/max > Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0128/sum
+
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0064/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0064/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0064/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0064/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0128/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0128/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0128/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.002/MPI.0128/graph4.gnu"' | gnuplot
+
+
+FLOP count 4...
+    mkdir Results.snellius.genoa.01/Run.002/FLOPS.004 
+
+  Building ERT core code...
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=4 -DERT_ALIGN=32 -DERT_MEMORY_MAX=85496692736 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Drivers/driver1.cxx -o Results.snellius.genoa.01/Run.002/FLOPS.004/driver1.o 
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=4 -DERT_ALIGN=32 -DERT_MEMORY_MAX=85496692736 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Kernels/kernel1.cxx -o Results.snellius.genoa.01/Run.002/FLOPS.004/kernel1.o 
+    mpic++ Results.snellius.genoa.01/Run.002/FLOPS.004/driver1.o Results.snellius.genoa.01/Run.002/FLOPS.004/kernel1.o -o Results.snellius.genoa.01/Run.002/FLOPS.004/driver1.kernel1 
+
+  Running ERT core code...
+    mkdir Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0064 
+    MPI 64
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.004/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0064/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.004/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0064/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.004/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0064/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.004/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0064/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.004/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0064/try.005 2>&1 
+    touch Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0064/run.done 
+
+    mkdir Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0128 
+    MPI 128
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.genoa.01/Run.002/FLOPS.004/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0128/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.genoa.01/Run.002/FLOPS.004/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0128/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.genoa.01/Run.002/FLOPS.004/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0128/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.genoa.01/Run.002/FLOPS.004/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0128/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.genoa.01/Run.002/FLOPS.004/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0128/try.005 2>&1 
+    touch Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0128/run.done 
+
+  Processing results...
+    Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0064
+    cat Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0064/try.* | ./Scripts/preprocess.py > Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0064/pre
+    ./Scripts/maximum.py < Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0064/pre > Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0064/max
+    ./Scripts/summary.py < Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0064/max > Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0064/sum
+
+    Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0128
+    cat Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0128/try.* | ./Scripts/preprocess.py > Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0128/pre
+    ./Scripts/maximum.py < Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0128/pre > Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0128/max
+    ./Scripts/summary.py < Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0128/max > Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0128/sum
+
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0064/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0064/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0064/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0064/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0128/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0128/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0128/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.genoa.01/Run.002/FLOPS.004/MPI.0128/graph4.gnu"' | gnuplot
+
+
+FLOP count 8...
+    mkdir Results.snellius.genoa.01/Run.002/FLOPS.008 
+
+  Building ERT core code...
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=8 -DERT_ALIGN=32 -DERT_MEMORY_MAX=85496692736 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Drivers/driver1.cxx -o Results.snellius.genoa.01/Run.002/FLOPS.008/driver1.o 
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=8 -DERT_ALIGN=32 -DERT_MEMORY_MAX=85496692736 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Kernels/kernel1.cxx -o Results.snellius.genoa.01/Run.002/FLOPS.008/kernel1.o 
+    mpic++ Results.snellius.genoa.01/Run.002/FLOPS.008/driver1.o Results.snellius.genoa.01/Run.002/FLOPS.008/kernel1.o -o Results.snellius.genoa.01/Run.002/FLOPS.008/driver1.kernel1 
+
+  Running ERT core code...
+    mkdir Results.snellius.genoa.01/Run.002/FLOPS.008/MPI.0064 
+    MPI 64
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.008/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.008/MPI.0064/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.008/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.008/MPI.0064/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.008/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.008/MPI.0064/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.008/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.008/MPI.0064/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.002/FLOPS.008/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.008/MPI.0064/try.005 2>&1 
+    touch Results.snellius.genoa.01/Run.002/FLOPS.008/MPI.0064/run.done 
+
+    mkdir Results.snellius.genoa.01/Run.002/FLOPS.008/MPI.0128 
+    MPI 128
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.genoa.01/Run.002/FLOPS.008/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.008/MPI.0128/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.genoa.01/Run.002/FLOPS.008/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.008/MPI.0128/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.genoa.01/Run.002/FLOPS.008/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.008/MPI.0128/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.genoa.01/Run.002/FLOPS.008/driver1.kernel1 ) > Results.snellius.genoa.01/Run.002/FLOPS.008/MPI.0128/try.004 2>&1 
+slurmstepd: error: *** JOB 5614575 ON tcn670 CANCELLED AT 2024-03-20T13:15:33 DUE TO TIME LIMIT ***
+slurmstepd: error: container_p_join: open failed for /slurm/5614575/.ns: No such file or directory
+slurmstepd: error: container_g_join(5614575): No such file or directory
+
+JOB STATISTICS
+==============
+Job ID: 5614575
+Cluster: snellius
+User/Group: jvandijk/jvandijk
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 192
+CPU Utilized: 00:00:03
+CPU Efficiency: 0.00% of 8-00:44:48 core-walltime
+Job Wall-clock time: 01:00:14
+Memory Utilized: 92.94 GB
+Memory Efficiency: 27.66% of 336.00 GB

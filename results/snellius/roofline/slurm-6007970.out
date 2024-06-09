@@ -1,0 +1,47 @@
+Restoring modules from user's ert
+
+Reading configuration from 'Config/config.snellius.genoa.01'...
+  Using existing results directory, Results.snellius.genoa.01...
+
+*** WARNING ***
+**
+**  Making new run directory, 'Results.snellius.genoa.01/Run.003',
+**    because the current connfiguration file, 'Config/config.snellius.genoa.01' 
+**    doesn't match the configuration files, 'config.ert', under:
+**
+**      Results.snellius.genoa.01/Run.001
+**      Results.snellius.genoa.01/Run.002
+**
+*** WARNING ***
+    mkdir Results.snellius.genoa.01/Run.003 
+    cp Config/config.snellius.genoa.01 Results.snellius.genoa.01/Run.003/config.ert 
+
+FLOP count 1...
+    mkdir Results.snellius.genoa.01/Run.003/FLOPS.001 
+
+  Building ERT core code...
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=1 -DERT_ALIGN=32 -DERT_MEMORY_MAX=185496692736 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Drivers/driver1.cxx -o Results.snellius.genoa.01/Run.003/FLOPS.001/driver1.o 
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=1 -DERT_ALIGN=32 -DERT_MEMORY_MAX=185496692736 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Kernels/kernel1.cxx -o Results.snellius.genoa.01/Run.003/FLOPS.001/kernel1.o 
+    mpic++ Results.snellius.genoa.01/Run.003/FLOPS.001/driver1.o Results.snellius.genoa.01/Run.003/FLOPS.001/kernel1.o -o Results.snellius.genoa.01/Run.003/FLOPS.001/driver1.kernel1 
+
+  Running ERT core code...
+    mkdir Results.snellius.genoa.01/Run.003/FLOPS.001/MPI.0064 
+    MPI 64
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.genoa.01/Run.003/FLOPS.001/driver1.kernel1 ) > Results.snellius.genoa.01/Run.003/FLOPS.001/MPI.0064/try.001 2>&1 
+slurmstepd: error: *** JOB 6007970 ON tcn1113 CANCELLED AT 2024-04-22T14:13:16 ***
+slurmstepd: error: container_p_join: setns failed for /slurm/6007970/.ns: Invalid argument
+slurmstepd: error: container_g_join(6007970): Invalid argument
+
+JOB STATISTICS
+==============
+Job ID: 6007970
+Cluster: snellius
+User/Group: jvandijk/jvandijk
+State: CANCELLED (exit code 0)
+Nodes: 1
+Cores per node: 192
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 09:52:00 core-walltime
+Job Wall-clock time: 00:03:05
+Memory Utilized: 1.17 MB
+Memory Efficiency: 0.00% of 336.00 GB

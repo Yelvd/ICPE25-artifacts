@@ -1,0 +1,51 @@
+Restoring modules from user's ert
+***************************************************************************************************** 
+* WARNING: The 2021 software stack is not available on the 'genoa' partition.
+Please use the 2022 * 
+* software stack. * 
+* * 
+* If you have any question, please contact us via
+http://servicedesk.surfsara.nl. * 
+***************************************************************************************************** 
+Lmod Warning: The following modules were not loaded: GCC OpenMPI UCX binutils
+hwloc libfabric numactl
+
+
+
+
+Lmod Warning: One or more modules in your ert collection have changed: "2021".
+To see the contents of this collection execute:
+  $ module describe ert
+To rebuild the collection, do a module reset, then load the modules you wish,
+then execute:
+  $ module save ert
+If you no longer want this module collection execute:
+  $ rm ~/.lmod.d/ert
+
+For more information execute 'module help' or see https://lmod.readthedocs.org/
+No change in modules loaded.
+
+
+
+
+Unable to open 'Config/config.snellius_genoa.01'...
+
+--- Configuring ERT failed ---
+
+
+Reading configuration from 'Config/config.snellius_genoa.01'...
+
+JOB STATISTICS
+==============
+Job ID: 5164438
+Cluster: snellius
+User/Group: jvandijk/jvandijk
+State: RUNNING
+Nodes: 1
+Cores per node: 192
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 00:41:36 core-walltime
+Job Wall-clock time: 00:00:13
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 336.00 GB (1.75 GB/core)
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.

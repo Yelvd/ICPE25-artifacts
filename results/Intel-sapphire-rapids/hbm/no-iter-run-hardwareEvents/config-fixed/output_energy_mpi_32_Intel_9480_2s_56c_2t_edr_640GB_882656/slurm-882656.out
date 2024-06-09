@@ -1,0 +1,155 @@
+CONFIG = FIXED
+Zone reclaim
+Numa balancing
+Transparent HP
+Drop Cache
+Turbo
+OFF
+o405: /home_nfs/script/admin/turbo_off.sh: line 7: /sys/devices/system/cpu/cpufreq/boost: Permission denied
+---------------
+o405
+---------------
+Boost is now disabled on this node.
+ #####################################
+ Begin : 
+ #####################################
+--------------------------------------------------------------------------
+The library attempted to open the following supporting CUDA libraries,
+but each of them failed.  CUDA-aware support is disabled.
+libcuda.so.1: cannot open shared object file: No such file or directory
+libcuda.dylib: cannot open shared object file: No such file or directory
+/usr/lib64/libcuda.so.1: cannot open shared object file: No such file or directory
+/usr/lib64/libcuda.dylib: cannot open shared object file: No such file or directory
+If you are not interested in CUDA-aware support, then run with
+--mca opal_warn_on_missing_libcuda 0 to suppress this message.  If you are interested
+in CUDA-aware support, then try setting LD_LIBRARY_PATH to the location
+of libcuda.so.1 to get passed this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+WARNING: There was an error initializing an OpenFabrics device.
+
+  Local host:   o405
+  Local device: mlx5_0
+--------------------------------------------------------------------------
+[o405:3893805] [[41629,0],0] ORTE_ERROR_LOG: Data unpack would read past end of buffer in file ../../orte/util/show_help.c at line 501
+[1710501241.739792] [o405:3893880:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.743867] [o405:3893884:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.745815] [o405:3893874:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.746257] [o405:3893851:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.746607] [o405:3893860:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.746727] [o405:3893853:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.749186] [o405:3893869:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.750521] [o405:3893882:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.750516] [o405:3893897:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.751576] [o405:3893872:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.751702] [o405:3893862:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.755214] [o405:3893858:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.755597] [o405:3893867:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.756012] [o405:3893902:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.757227] [o405:3893896:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.757522] [o405:3893900:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.757901] [o405:3893878:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.761671] [o405:3893904:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.761919] [o405:3893866:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.762248] [o405:3893850:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.762482] [o405:3893876:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.762533] [o405:3893903:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.762582] [o405:3893906:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.762583] [o405:3893849:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.762750] [o405:3893905:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.762928] [o405:3893856:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.762951] [o405:3893892:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.762980] [o405:3893864:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.763052] [o405:3893890:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.763122] [o405:3893886:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.763119] [o405:3893888:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+[1710501241.763126] [o405:3893893:0]     ucp_context.c:1969 UCX  WARN  UCP API version is incompatible: required >= 1.15, actual 1.14.1 (loaded from /home_nfs/bhamitono/install/x86_64/rh/8.6/ucx/1.14.1/gnu/8.5.0/lib/libucp.so.0)
+(HemoCell) (Config) reading config-fixed.xml
+ _   _   ____   __  __   _____    ___   ____   __     __ 
+( )_( ) ( ___) (  \/  ) (  _  )  / __) ( ___) (  )   (  )
+ ) _ (   )__)   )    (   )(_)(  ( (__   )__)   )(__   )(__ 
+(_) (_) (____) (_/\/\_) (_____)  \___) (____) (____) (____) 
+                         v.2.6
+
+(unbounded) (Parameters) calculating flow parameters
+(HemoCell) dt is set to *auto*. Tau will be set to 1!
+(HemoCell) System parameters:
+	 dx: 	5e-07
+	 dt: 	3.78788e-08
+	 dm: 	1.28125e-16
+	 dN: 	4.4649e-08
+	 tau: 	1
+	 nu_lbm: 	0.166667
+	 u_lb_max: 	7.57576e-07
+	 f_limit: 	0.00111985
+(unbounded) (Fluid) Initializing Palabos Fluid Field
+(HemoCell) Using default domain management.
+(HemoCell) (Fluid) Setting Fluid Equilibrium
+Size of the multi-block:     200-by-200-by-100
+Number of atomic-blocks:     32
+Smallest atomic-block:       50-by-50-by-50
+Largest atomic-block:        50-by-50-by-50
+Number of allocated cells:   4 million
+Fraction of allocated domain: 100 percent
+
+(Hemocell) (HemoCellFields) (Init) particle envelope: 25 [lu]
+Cellfield  (+ material model) of RBC
+  Volume :90 µm³ VolumeFraction of lsp per fluid node: 1.1215 %
+  Nvertex: 642
+(Cell-mechanics model) High Order model parameters for RBC cellfield
+	 k_link:   0.000183679
+	 k_area:   9.18393e-07
+	 k_bend: : 1.46943e-05
+	 k_volume: 3.67357e-06
+	 eta_m:    0
+	 mean_edge:1.00019
+	 N faces:  1280
+(HemoCell) (Timescale Seperation) Setting seperation of RBC to 20 timesteps
+(HemoCell) (Timescale separation) Setting update separation of all particles to 5 timesteps
+(HemoCell) (CellField) Setting output variables for RBC cells
+(HemoCell) (Fluid) Setting output variables for fluid field
+(HemoCell) (CellField) Loading particle positions 
+(readPositionsBloodCells) Reading particle positions...
+(readPositionsBloodCells) Particle count in file (RBC): 128000.
+(HemoCell) (Output) writing output at timestep 0 (0 s). Approx. performance: 0.00 s / iteration.
+(unbounded) fresh start: warming up cell-free fluid domain for 0 iterations...
+(unbounded) Starting simulation...
+ | RBC Volume ratio [x100%]: 1.925
+(main)   nCells (global) = 1000
+Hemocell Profiler Statistics (Only Process 0):
+HemoCell: 1.182000
+ MpiReceive: 0.000000
+ MpiSend: 0.000000
+ deleteIncompleteCells: 0.014000
+ output: 0.414000
+  applyConstitutiveModel: 0.015000
+  deleteIncompleteCells: 0.005000
+  separateForceVectors: 0.038000
+  syncEnvelopes: 0.041000
+   MpiReceive: 0.012000
+   MpiSend: 0.011000
+  unifyForceVectors: 0.008000
+  updateResidenceTime: 0.000000
+  writeOutput: 0.271000
+   writeCellCSVInfo: 0.057000
+    syncEnvelopes: 0.014000
+     MpiReceive: 0.005000
+     MpiSend: 0.004000
+   writeCellField: 0.178000
+   writeFluidField: 0.036000
+ syncEnvelopes: 0.127000
+  MpiReceive: 0.021000
+  MpiSend: 0.013000
+(main) Simulation finished :) 
+[o405:3893805] 31 more processes have sent help message help-mpi-common-cuda.txt / dlopen failed
+[o405:3893805] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[o405:3893805] 30 more processes have sent help message help-mpi-btl-openib.txt / error in device init
+ -- 
+Energy = 1986.504200968 J (Average of 568 W, 3 samples, over 3.497366551 s )
+Measurement details in './report_882656.csv'
+cat: bull_time.out: No such file or directory
+BULL MPI TASKS   = 32
+BULL Bin name    = /home_nfs/bhamitono/projects/compbiomed2/wp4/hemocell/HemoCell-dev-develop/build_intel_sapphirerapids/cube_gnu_sapphirerapids 
+BULL config      = fixed 
+BULL PARTITION   = Intel_9480_2s_56c_2t_edr_640GB
+BULL Time        = 

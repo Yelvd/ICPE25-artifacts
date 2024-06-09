@@ -1,0 +1,536 @@
+--------------------------------------------------------------------------------
+CPU name:	Intel (R) Xeon (R) CPU Max 9480
+CPU type:	Intel SapphireRapids processor
+CPU clock:	1.90 GHz
+--------------------------------------------------------------------------------
+Group 1: FLOPS_DP
++------------------------------------------+---------+--------------+
+|                   Event                  | Counter |  HWThread 10 |
++------------------------------------------+---------+--------------+
+|             INSTR_RETIRED_ANY            |  FIXC0  | 342783319508 |
+|           CPU_CLK_UNHALTED_CORE          |  FIXC1  | 143796135999 |
+|           CPU_CLK_UNHALTED_REF           |  FIXC2  | 143792717972 |
+|               TOPDOWN_SLOTS              |  FIXC3  | 862772589186 |
+| FP_ARITH_INST_RETIRED_128B_PACKED_DOUBLE |   PMC0  |   6396686355 |
+|    FP_ARITH_INST_RETIRED_SCALAR_DOUBLE   |   PMC1  |  90610480609 |
+| FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE |   PMC2  |   6536806908 |
+| FP_ARITH_INST_RETIRED_512B_PACKED_DOUBLE |   PMC3  |            0 |
++------------------------------------------+---------+--------------+
++----------------------+-------------+
+|        Metric        | HWThread 10 |
++----------------------+-------------+
+|  Runtime (RDTSC) [s] |     76.0280 |
+| Runtime unhalted [s] |     75.6829 |
+|      Clock [MHz]     |   1900.0259 |
+|          CPI         |      0.4195 |
+|     DP [MFLOP/s]     |   1703.9918 |
+|   AVX DP [MFLOP/s]   |    343.9158 |
+|  AVX512 DP [MFLOP/s] |           0 |
+|   Packed [MUOPS/s]   |    170.1149 |
+|   Scalar [MUOPS/s]   |   1191.8042 |
+|  Vectorization ratio |     12.4908 |
++----------------------+-------------+
+--------------------------------------------------------------------------------
+CPU name:	Intel (R) Xeon (R) CPU Max 9480
+CPU type:	Intel SapphireRapids processor
+CPU clock:	1.90 GHz
+--------------------------------------------------------------------------------
+Group 2: CLOCK
++-----------------------+---------+--------------+
+|         Event         | Counter |  HWThread 10 |
++-----------------------+---------+--------------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 346966806678 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 145546759942 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  | 145543195116 |
+|     TOPDOWN_SLOTS     |  FIXC3  | 873269376096 |
+|     PWR_PKG_ENERGY    |   PWR0  |   27202.8984 |
++-----------------------+---------+--------------+
++----------------------+-------------+
+|        Metric        | HWThread 10 |
++----------------------+-------------+
+|  Runtime (RDTSC) [s] |     78.0275 |
+| Runtime unhalted [s] |     76.6043 |
+|      Clock [MHz]     |   1900.0273 |
+|          CPI         |      0.4195 |
+|      Energy [J]      |  27202.8984 |
+|       Power [W]      |    348.6320 |
++----------------------+-------------+
+--------------------------------------------------------------------------------
+CPU name:	Intel (R) Xeon (R) CPU Max 9480
+CPU type:	Intel SapphireRapids processor
+CPU clock:	1.90 GHz
+--------------------------------------------------------------------------------
+Group 3: DATA
++-----------------------------+---------+--------------+
+|            Event            | Counter |  HWThread 10 |
++-----------------------------+---------+--------------+
+|      INSTR_RETIRED_ANY      |  FIXC0  | 352484625448 |
+|    CPU_CLK_UNHALTED_CORE    |  FIXC1  | 147402304667 |
+|     CPU_CLK_UNHALTED_REF    |  FIXC2  | 147399387348 |
+|        TOPDOWN_SLOTS        |  FIXC3  | 884402753670 |
+|  MEM_INST_RETIRED_ALL_LOADS |   PMC0  | 125892189562 |
+| MEM_INST_RETIRED_ALL_STORES |   PMC1  |  40743315151 |
++-----------------------------+---------+--------------+
++----------------------+-------------+
+|        Metric        | HWThread 10 |
++----------------------+-------------+
+|  Runtime (RDTSC) [s] |     78.0303 |
+| Runtime unhalted [s] |     77.5809 |
+|      Clock [MHz]     |   1900.0183 |
+|          CPI         |      0.4182 |
+|  Load to store ratio |      3.0899 |
++----------------------+-------------+
+--------------------------------------------------------------------------------
+CPU name:	Intel (R) Xeon (R) CPU Max 9480
+CPU type:	Intel SapphireRapids processor
+CPU clock:	1.90 GHz
+--------------------------------------------------------------------------------
+Group 4: L2
++-----------------------+---------+--------------+
+|         Event         | Counter |  HWThread 10 |
++-----------------------+---------+--------------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 352489653671 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 147605279163 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  | 147601560800 |
+|     TOPDOWN_SLOTS     |  FIXC3  | 885625798350 |
+|    L1D_REPLACEMENT    |   PMC0  |   5125473551 |
++-----------------------+---------+--------------+
++-------------------------------+-------------+
+|             Metric            | HWThread 10 |
++-------------------------------+-------------+
+|      Runtime (RDTSC) [s]      |     78.0431 |
+|      Runtime unhalted [s]     |     77.6878 |
+|          Clock [MHz]          |   1900.0286 |
+|              CPI              |      0.4188 |
+| L2D load bandwidth [MBytes/s] |   4203.1955 |
+| L2D load data volume [GBytes] |    328.0303 |
++-------------------------------+-------------+
+--------------------------------------------------------------------------------
+CPU name:	Intel (R) Xeon (R) CPU Max 9480
+CPU type:	Intel SapphireRapids processor
+CPU clock:	1.90 GHz
+--------------------------------------------------------------------------------
+Group 5: L3
++-------------------------+---------+--------------+
+|          Event          | Counter |  HWThread 10 |
++-------------------------+---------+--------------+
+|    INSTR_RETIRED_ANY    |  FIXC0  | 363163326205 |
+|  CPU_CLK_UNHALTED_CORE  |  FIXC1  | 147586002288 |
+|   CPU_CLK_UNHALTED_REF  |  FIXC2  | 147582305668 |
+|      TOPDOWN_SLOTS      |  FIXC3  | 885511800258 |
+|     L2_LINES_IN_ALL     |   PMC0  |   4894720684 |
+|   L2_LINES_OUT_SILENT   |   PMC2  |     40174004 |
+| L2_LINES_OUT_NON_SILENT |   PMC3  |   4854461912 |
++-------------------------+---------+--------------+
++----------------------------------+-------------+
+|              Metric              | HWThread 10 |
++----------------------------------+-------------+
+|        Runtime (RDTSC) [s]       |     78.0306 |
+|       Runtime unhalted [s]       |     77.6776 |
+|            Clock [MHz]           |   1900.0283 |
+|                CPI               |      0.4064 |
+|   L3 load bandwidth [MBytes/s]   |   4014.6075 |
+|   L3 load data volume [GBytes]   |    313.2621 |
+|   L3 evict bandwidth [MBytes/s]  |   3981.5876 |
+|   L3 evict data volume [GBytes]  |    310.6856 |
+| Dropped CLs bandwidth [MBytes/s] |     32.9504 |
+| Dropped CLs data volume [GBytes] |      2.5711 |
+|      L3 bandwidth [MBytes/s]     |   7996.1951 |
+|      L3 data volume [GBytes]     |    623.9477 |
++----------------------------------+-------------+
+--------------------------------------------------------------------------------
+CPU name:	Intel (R) Xeon (R) CPU Max 9480
+CPU type:	Intel SapphireRapids processor
+CPU clock:	1.90 GHz
+--------------------------------------------------------------------------------
+Group 6: MEM
++-----------------------+----------+--------------+
+|         Event         |  Counter |  HWThread 10 |
++-----------------------+----------+--------------+
+|   INSTR_RETIRED_ANY   |   FIXC0  | 446444399173 |
+| CPU_CLK_UNHALTED_CORE |   FIXC1  | 147636885579 |
+|  CPU_CLK_UNHALTED_REF |   FIXC2  | 147632939300 |
+|     TOPDOWN_SLOTS     |   FIXC3  | 885815729556 |
+|      CAS_COUNT_RD     |  MBOX0C0 |      1438873 |
+|      CAS_COUNT_WR     |  MBOX0C1 |       359395 |
+|      CAS_COUNT_RD     |  MBOX1C0 |      1508927 |
+|      CAS_COUNT_WR     |  MBOX1C1 |       364843 |
+|      CAS_COUNT_RD     |  MBOX2C0 |      1187534 |
+|      CAS_COUNT_WR     |  MBOX2C1 |       337528 |
+|      CAS_COUNT_RD     |  MBOX3C0 |      1193092 |
+|      CAS_COUNT_WR     |  MBOX3C1 |       343512 |
+|      CAS_COUNT_RD     |  MBOX4C0 |      1382332 |
+|      CAS_COUNT_WR     |  MBOX4C1 |       347749 |
+|      CAS_COUNT_RD     |  MBOX5C0 |      1374710 |
+|      CAS_COUNT_WR     |  MBOX5C1 |       347942 |
+|      CAS_COUNT_RD     |  MBOX6C0 |      1439856 |
+|      CAS_COUNT_WR     |  MBOX6C1 |       367053 |
+|      CAS_COUNT_RD     |  MBOX7C0 |      1471759 |
+|      CAS_COUNT_WR     |  MBOX7C1 |       370179 |
+|      CAS_COUNT_RD     |  MBOX8C0 |       -      |
+|      CAS_COUNT_WR     |  MBOX8C1 |       -      |
+|      CAS_COUNT_RD     |  MBOX9C0 |       -      |
+|      CAS_COUNT_WR     |  MBOX9C1 |       -      |
+|      CAS_COUNT_RD     | MBOX10C0 |       -      |
+|      CAS_COUNT_WR     | MBOX10C1 |       -      |
+|      CAS_COUNT_RD     | MBOX11C0 |       -      |
+|      CAS_COUNT_WR     | MBOX11C1 |       -      |
+|      CAS_COUNT_RD     | MBOX12C0 |       -      |
+|      CAS_COUNT_WR     | MBOX12C1 |       -      |
+|      CAS_COUNT_RD     | MBOX13C0 |       -      |
+|      CAS_COUNT_WR     | MBOX13C1 |       -      |
+|      CAS_COUNT_RD     | MBOX14C0 |       -      |
+|      CAS_COUNT_WR     | MBOX14C1 |       -      |
+|      CAS_COUNT_RD     | MBOX15C0 |       -      |
+|      CAS_COUNT_WR     | MBOX15C1 |       -      |
++-----------------------+----------+--------------+
++-----------------------------------+-------------+
+|               Metric              | HWThread 10 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |     78.0254 |
+|        Runtime unhalted [s]       |     77.7044 |
+|            Clock [MHz]            |   1900.0315 |
+|                CPI                |      0.3307 |
+|  Memory read bandwidth [MBytes/s] |      9.0203 |
+|  Memory read data volume [GBytes] |      0.7038 |
+| Memory write bandwidth [MBytes/s] |      2.3280 |
+| Memory write data volume [GBytes] |      0.1816 |
+|    Memory bandwidth [MBytes/s]    |     11.3483 |
+|    Memory data volume [GBytes]    |      0.8855 |
++-----------------------------------+-------------+
+--------------------------------------------------------------------------------
+CPU name:	Intel (R) Xeon (R) CPU Max 9480
+CPU type:	Intel SapphireRapids processor
+CPU clock:	1.90 GHz
+--------------------------------------------------------------------------------
+Group 7: DDR_HBM
++-----------------------+----------+--------------+
+|         Event         |  Counter |  HWThread 10 |
++-----------------------+----------+--------------+
+|   INSTR_RETIRED_ANY   |   FIXC0  | 572792072162 |
+| CPU_CLK_UNHALTED_CORE |   FIXC1  | 147903941245 |
+|  CPU_CLK_UNHALTED_REF |   FIXC2  | 147895979100 |
+|     TOPDOWN_SLOTS     |   FIXC3  | 887418940722 |
+|      CAS_COUNT_RD     |  MBOX0C0 |      1415294 |
+|      CAS_COUNT_WR     |  MBOX0C1 |       499729 |
+|      CAS_COUNT_RD     |  MBOX1C0 |      1376709 |
+|      CAS_COUNT_WR     |  MBOX1C1 |       503326 |
+|      CAS_COUNT_RD     |  MBOX2C0 |      1229497 |
+|      CAS_COUNT_WR     |  MBOX2C1 |       517308 |
+|      CAS_COUNT_RD     |  MBOX3C0 |      1231414 |
+|      CAS_COUNT_WR     |  MBOX3C1 |       524155 |
+|      CAS_COUNT_RD     |  MBOX4C0 |      1162615 |
+|      CAS_COUNT_WR     |  MBOX4C1 |       474277 |
+|      CAS_COUNT_RD     |  MBOX5C0 |      1161036 |
+|      CAS_COUNT_WR     |  MBOX5C1 |       474872 |
+|      CAS_COUNT_RD     |  MBOX6C0 |      1483017 |
+|      CAS_COUNT_WR     |  MBOX6C1 |       544203 |
+|      CAS_COUNT_RD     |  MBOX7C0 |      1502171 |
+|      CAS_COUNT_WR     |  MBOX7C1 |       541772 |
+|      CAS_COUNT_RD     |  MBOX8C0 |       -      |
+|      CAS_COUNT_WR     |  MBOX8C1 |       -      |
+|      CAS_COUNT_RD     |  MBOX9C0 |       -      |
+|      CAS_COUNT_WR     |  MBOX9C1 |       -      |
+|      CAS_COUNT_RD     | MBOX10C0 |       -      |
+|      CAS_COUNT_WR     | MBOX10C1 |       -      |
+|      CAS_COUNT_RD     | MBOX11C0 |       -      |
+|      CAS_COUNT_WR     | MBOX11C1 |       -      |
+|      CAS_COUNT_RD     | MBOX12C0 |       -      |
+|      CAS_COUNT_WR     | MBOX12C1 |       -      |
+|      CAS_COUNT_RD     | MBOX13C0 |       -      |
+|      CAS_COUNT_WR     | MBOX13C1 |       -      |
+|      CAS_COUNT_RD     | MBOX14C0 |       -      |
+|      CAS_COUNT_WR     | MBOX14C1 |       -      |
+|      CAS_COUNT_RD     | MBOX15C0 |       -      |
+|      CAS_COUNT_WR     | MBOX15C1 |       -      |
+|      CAS_COUNT_RD     |  HBM0C0  |    131474382 |
+|      CAS_COUNT_WR     |  HBM0C1  |     81465858 |
+|      CAS_COUNT_RD     |  HBM1C0  |    131358710 |
+|      CAS_COUNT_WR     |  HBM1C1  |     81195263 |
+|      CAS_COUNT_RD     |  HBM2C0  |    130366168 |
+|      CAS_COUNT_WR     |  HBM2C1  |     81393961 |
+|      CAS_COUNT_RD     |  HBM3C0  |    130083704 |
+|      CAS_COUNT_WR     |  HBM3C1  |     81548876 |
+|      CAS_COUNT_RD     |  HBM4C0  |    129275137 |
+|      CAS_COUNT_WR     |  HBM4C1  |     81030266 |
+|      CAS_COUNT_RD     |  HBM5C0  |    130246212 |
+|      CAS_COUNT_WR     |  HBM5C1  |     81442511 |
+|      CAS_COUNT_RD     |  HBM6C0  |    129524220 |
+|      CAS_COUNT_WR     |  HBM6C1  |     81257460 |
+|      CAS_COUNT_RD     |  HBM7C0  |    129212366 |
+|      CAS_COUNT_WR     |  HBM7C1  |     80925342 |
+|      CAS_COUNT_RD     |  HBM8C0  |    130145633 |
+|      CAS_COUNT_WR     |  HBM8C1  |     81022646 |
+|      CAS_COUNT_RD     |  HBM9C0  |    129926415 |
+|      CAS_COUNT_WR     |  HBM9C1  |     80915477 |
+|      CAS_COUNT_RD     |  HBM10C0 |    130619867 |
+|      CAS_COUNT_WR     |  HBM10C1 |     81439917 |
+|      CAS_COUNT_RD     |  HBM11C0 |    130480936 |
+|      CAS_COUNT_WR     |  HBM11C1 |     80858626 |
+|      CAS_COUNT_RD     |  HBM12C0 |    129686312 |
+|      CAS_COUNT_WR     |  HBM12C1 |     80826351 |
+|      CAS_COUNT_RD     |  HBM13C0 |    130110622 |
+|      CAS_COUNT_WR     |  HBM13C1 |     81341881 |
+|      CAS_COUNT_RD     |  HBM14C0 |    130327067 |
+|      CAS_COUNT_WR     |  HBM14C1 |     81308569 |
+|      CAS_COUNT_RD     |  HBM15C0 |    129724790 |
+|      CAS_COUNT_WR     |  HBM15C1 |     81668076 |
++-----------------------+----------+--------------+
++--------------------------------+-------------+
+|             Metric             | HWThread 10 |
++--------------------------------+-------------+
+|       Runtime (RDTSC) [s]      |     78.0238 |
+|      Runtime unhalted [s]      |     77.8450 |
+|           Clock [MHz]          |   1900.0830 |
+|               CPI              |      0.2582 |
+|  DDR read bandwidth [MBytes/s] |      8.6634 |
+|  DDR read data volume [GBytes] |      0.6760 |
+| DDR write bandwidth [MBytes/s] |      3.3464 |
+| DDR write data volume [GBytes] |      0.2611 |
+|    DDR bandwidth [MBytes/s]    |     12.0098 |
+|    DDR data volume [GBytes]    |      0.9370 |
+|  HBM read bandwidth [MBytes/s] |   1708.2481 |
+|  HBM read data volume [GBytes] |    133.2840 |
+| HBM write bandwidth [MBytes/s] |   1066.0470 |
+| HBM write data volume [GBytes] |     83.1770 |
+|    HBM bandwidth [MBytes/s]    |   2774.2951 |
+|    HBM data volume [GBytes]    |    216.4610 |
++--------------------------------+-------------+
+--------------------------------------------------------------------------------
+CPU name:	Intel (R) Xeon (R) CPU Max 9480
+CPU type:	Intel SapphireRapids processor
+CPU clock:	1.90 GHz
+--------------------------------------------------------------------------------
+Group 8: HBM
++-----------------------+---------+--------------+
+|         Event         | Counter |  HWThread 10 |
++-----------------------+---------+--------------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 518414297582 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 147923914426 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  | 147917946900 |
+|     TOPDOWN_SLOTS     |  FIXC3  | 887538625278 |
+|      CAS_COUNT_RD     |  HBM0C0 |    246584969 |
+|      CAS_COUNT_WR     |  HBM0C1 |    144519947 |
+|      CAS_COUNT_RD     |  HBM1C0 |    245836106 |
+|      CAS_COUNT_WR     |  HBM1C1 |    144090189 |
+|      CAS_COUNT_RD     |  HBM2C0 |    245509283 |
+|      CAS_COUNT_WR     |  HBM2C1 |    144231071 |
+|      CAS_COUNT_RD     |  HBM3C0 |    244717794 |
+|      CAS_COUNT_WR     |  HBM3C1 |    143726283 |
+|      CAS_COUNT_RD     |  HBM4C0 |    244721851 |
+|      CAS_COUNT_WR     |  HBM4C1 |    143708083 |
+|      CAS_COUNT_RD     |  HBM5C0 |    244309328 |
+|      CAS_COUNT_WR     |  HBM5C1 |    144030769 |
+|      CAS_COUNT_RD     |  HBM6C0 |    243752096 |
+|      CAS_COUNT_WR     |  HBM6C1 |    144374869 |
+|      CAS_COUNT_RD     |  HBM7C0 |    243669224 |
+|      CAS_COUNT_WR     |  HBM7C1 |    144346755 |
+|      CAS_COUNT_RD     |  HBM8C0 |    244873382 |
+|      CAS_COUNT_WR     |  HBM8C1 |    144493564 |
+|      CAS_COUNT_RD     |  HBM9C0 |    244373045 |
+|      CAS_COUNT_WR     |  HBM9C1 |    144043360 |
+|      CAS_COUNT_RD     | HBM10C0 |    244543824 |
+|      CAS_COUNT_WR     | HBM10C1 |    145020644 |
+|      CAS_COUNT_RD     | HBM11C0 |    245470795 |
+|      CAS_COUNT_WR     | HBM11C1 |    144763884 |
+|      CAS_COUNT_RD     | HBM12C0 |    245370718 |
+|      CAS_COUNT_WR     | HBM12C1 |    144235207 |
+|      CAS_COUNT_RD     | HBM13C0 |    245558815 |
+|      CAS_COUNT_WR     | HBM13C1 |    144030691 |
+|      CAS_COUNT_RD     | HBM14C0 |    244951241 |
+|      CAS_COUNT_WR     | HBM14C1 |    144351697 |
+|      CAS_COUNT_RD     | HBM15C0 |    244003801 |
+|      CAS_COUNT_WR     | HBM15C1 |    144958571 |
++-----------------------+---------+--------------+
++--------------------------------+-------------+
+|             Metric             | HWThread 10 |
++--------------------------------+-------------+
+|       Runtime (RDTSC) [s]      |     78.0228 |
+|      Runtime unhalted [s]      |     77.8555 |
+|           Clock [MHz]          |   1900.0574 |
+|               CPI              |      0.2853 |
+|  HBM read bandwidth [MBytes/s] |   3214.0301 |
+|  HBM read data volume [GBytes] |    250.7678 |
+| HBM write bandwidth [MBytes/s] |   1893.9484 |
+| HBM write data volume [GBytes] |    147.7712 |
+|    HBM bandwidth [MBytes/s]    |   5107.9785 |
+|    HBM data volume [GBytes]    |    398.5390 |
++--------------------------------+-------------+
+--------------------------------------------------------------------------------
+CPU name:	Intel (R) Xeon (R) CPU Max 9480
+CPU type:	Intel SapphireRapids processor
+CPU clock:	1.90 GHz
+--------------------------------------------------------------------------------
+Group 9: HBM_DP
++------------------------------------------+---------+--------------+
+|                   Event                  | Counter |  HWThread 10 |
++------------------------------------------+---------+--------------+
+|             INSTR_RETIRED_ANY            |  FIXC0  | 516892228249 |
+|           CPU_CLK_UNHALTED_CORE          |  FIXC1  | 147818206742 |
+|           CPU_CLK_UNHALTED_REF           |  FIXC2  | 147812237360 |
+|               TOPDOWN_SLOTS              |  FIXC3  | 886905236952 |
+|              PWR_PKG_ENERGY              |   PWR0  |   27197.3775 |
+|              PWR_DRAM_ENERGY             |   PWR3  |     213.2825 |
+| FP_ARITH_INST_RETIRED_128B_PACKED_DOUBLE |   PMC0  |   3181665041 |
+|    FP_ARITH_INST_RETIRED_SCALAR_DOUBLE   |   PMC1  |  45410972217 |
+| FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE |   PMC2  |   3279224233 |
+| FP_ARITH_INST_RETIRED_512B_PACKED_DOUBLE |   PMC3  |            0 |
+|               CAS_COUNT_RD               |  HBM0C0 |    325017383 |
+|               CAS_COUNT_WR               |  HBM0C1 |    194354345 |
+|               CAS_COUNT_RD               |  HBM1C0 |    325825136 |
+|               CAS_COUNT_WR               |  HBM1C1 |    193734956 |
+|               CAS_COUNT_RD               |  HBM2C0 |    325968424 |
+|               CAS_COUNT_WR               |  HBM2C1 |    193998175 |
+|               CAS_COUNT_RD               |  HBM3C0 |    325549895 |
+|               CAS_COUNT_WR               |  HBM3C1 |    193322073 |
+|               CAS_COUNT_RD               |  HBM4C0 |    323733490 |
+|               CAS_COUNT_WR               |  HBM4C1 |    192225954 |
+|               CAS_COUNT_RD               |  HBM5C0 |    324698457 |
+|               CAS_COUNT_WR               |  HBM5C1 |    192228425 |
+|               CAS_COUNT_RD               |  HBM6C0 |    325202380 |
+|               CAS_COUNT_WR               |  HBM6C1 |    192330547 |
+|               CAS_COUNT_RD               |  HBM7C0 |    325627046 |
+|               CAS_COUNT_WR               |  HBM7C1 |    192272697 |
+|               CAS_COUNT_RD               |  HBM8C0 |    326656346 |
+|               CAS_COUNT_WR               |  HBM8C1 |    193818630 |
+|               CAS_COUNT_RD               |  HBM9C0 |    327131695 |
+|               CAS_COUNT_WR               |  HBM9C1 |    193549587 |
+|               CAS_COUNT_RD               | HBM10C0 |    325952829 |
+|               CAS_COUNT_WR               | HBM10C1 |    193169700 |
+|               CAS_COUNT_RD               | HBM11C0 |    326833024 |
+|               CAS_COUNT_WR               | HBM11C1 |    193417036 |
+|               CAS_COUNT_RD               | HBM12C0 |    326659814 |
+|               CAS_COUNT_WR               | HBM12C1 |    193476020 |
+|               CAS_COUNT_RD               | HBM13C0 |    327601366 |
+|               CAS_COUNT_WR               | HBM13C1 |    193632122 |
+|               CAS_COUNT_RD               | HBM14C0 |    327148630 |
+|               CAS_COUNT_WR               | HBM14C1 |    193956991 |
+|               CAS_COUNT_RD               | HBM15C0 |    328408572 |
+|               CAS_COUNT_WR               | HBM15C1 |    192801208 |
++------------------------------------------+---------+--------------+
++-----------------------------------+-------------+
+|               Metric              | HWThread 10 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |     78.0182 |
+|        Runtime unhalted [s]       |     77.7998 |
+|            Clock [MHz]            |   1900.0575 |
+|                CPI                |      0.2860 |
+|             Energy [J]            |  27197.3775 |
+|             Power [W]             |    348.6031 |
+|          Energy DRAM [J]          |    213.2825 |
+|           Power DRAM [W]          |      2.7338 |
+|            DP [MFLOP/s]           |    831.7447 |
+|          AVX DP [MFLOP/s]         |    168.1262 |
+|          Packed [MUOPS/s]         |     82.8126 |
+|          Scalar [MUOPS/s]         |    582.0564 |
+|   HBM read bandwidth [MBytes/s]   |   4280.4508 |
+|   HBM read data volume [GBytes]   |    333.9529 |
+|   HBM write bandwidth [MBytes/s]  |   2536.6715 |
+|   HBM write data volume [GBytes]  |    197.9065 |
+|      HBM bandwidth [MBytes/s]     |   6817.1224 |
+|      HBM data volume [GBytes]     |    531.8594 |
+| Operational intensity [FLOP/Byte] |      0.1220 |
++-----------------------------------+-------------+
+--------------------------------------------------------------------------------
+CPU name:	Intel (R) Xeon (R) CPU Max 9480
+CPU type:	Intel SapphireRapids processor
+CPU clock:	1.90 GHz
+--------------------------------------------------------------------------------
+Group 10: MEM_DP
++------------------------------------------+----------+--------------+
+|                   Event                  |  Counter |  HWThread 10 |
++------------------------------------------+----------+--------------+
+|             INSTR_RETIRED_ANY            |   FIXC0  | 434182912076 |
+|           CPU_CLK_UNHALTED_CORE          |   FIXC1  | 145115005622 |
+|           CPU_CLK_UNHALTED_REF           |   FIXC2  | 145110967384 |
+|               TOPDOWN_SLOTS              |   FIXC3  | 870680084892 |
+|              PWR_PKG_ENERGY              |   PWR0   |   26901.4827 |
+|              PWR_DRAM_ENERGY             |   PWR3   |     211.1974 |
+| FP_ARITH_INST_RETIRED_128B_PACKED_DOUBLE |   PMC0   |   4733752511 |
+|    FP_ARITH_INST_RETIRED_SCALAR_DOUBLE   |   PMC1   |  67149438942 |
+| FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE |   PMC2   |   4842997067 |
+| FP_ARITH_INST_RETIRED_512B_PACKED_DOUBLE |   PMC3   |            0 |
+|               CAS_COUNT_RD               |  MBOX0C0 |      2021957 |
+|               CAS_COUNT_WR               |  MBOX0C1 |       495253 |
+|               CAS_COUNT_RD               |  MBOX1C0 |      2230072 |
+|               CAS_COUNT_WR               |  MBOX1C1 |       506575 |
+|               CAS_COUNT_RD               |  MBOX2C0 |      1805407 |
+|               CAS_COUNT_WR               |  MBOX2C1 |       489808 |
+|               CAS_COUNT_RD               |  MBOX3C0 |      1833461 |
+|               CAS_COUNT_WR               |  MBOX3C1 |       504867 |
+|               CAS_COUNT_RD               |  MBOX4C0 |      1676592 |
+|               CAS_COUNT_WR               |  MBOX4C1 |       451207 |
+|               CAS_COUNT_RD               |  MBOX5C0 |      1602996 |
+|               CAS_COUNT_WR               |  MBOX5C1 |       447253 |
+|               CAS_COUNT_RD               |  MBOX6C0 |      2419834 |
+|               CAS_COUNT_WR               |  MBOX6C1 |       555198 |
+|               CAS_COUNT_RD               |  MBOX7C0 |      2394358 |
+|               CAS_COUNT_WR               |  MBOX7C1 |       553856 |
+|               CAS_COUNT_RD               |  MBOX8C0 |       -      |
+|               CAS_COUNT_WR               |  MBOX8C1 |       -      |
+|               CAS_COUNT_RD               |  MBOX9C0 |       -      |
+|               CAS_COUNT_WR               |  MBOX9C1 |       -      |
+|               CAS_COUNT_RD               | MBOX10C0 |       -      |
+|               CAS_COUNT_WR               | MBOX10C1 |       -      |
+|               CAS_COUNT_RD               | MBOX11C0 |       -      |
+|               CAS_COUNT_WR               | MBOX11C1 |       -      |
+|               CAS_COUNT_RD               | MBOX12C0 |       -      |
+|               CAS_COUNT_WR               | MBOX12C1 |       -      |
+|               CAS_COUNT_RD               | MBOX13C0 |       -      |
+|               CAS_COUNT_WR               | MBOX13C1 |       -      |
+|               CAS_COUNT_RD               | MBOX14C0 |       -      |
+|               CAS_COUNT_WR               | MBOX14C1 |       -      |
+|               CAS_COUNT_RD               | MBOX15C0 |       -      |
+|               CAS_COUNT_WR               | MBOX15C1 |       -      |
++------------------------------------------+----------+--------------+
++-----------------------------------+-------------+
+|               Metric              | HWThread 10 |
++-----------------------------------+-------------+
+|        Runtime (RDTSC) [s]        |     77.0767 |
+|        Runtime unhalted [s]       |     76.3771 |
+|            Clock [MHz]            |   1900.0336 |
+|                CPI                |      0.3342 |
+|             Energy [J]            |  26901.4827 |
+|             Power [W]             |    349.0221 |
+|          Energy DRAM [J]          |    211.1974 |
+|           Power DRAM [W]          |      2.7401 |
+|            DP [MFLOP/s]           |   1245.3684 |
+|          AVX DP [MFLOP/s]         |    251.3338 |
+|          Packed [MUOPS/s]         |    124.2495 |
+|          Scalar [MUOPS/s]         |    871.2024 |
+|  Memory read bandwidth [MBytes/s] |     13.2727 |
+|  Memory read data volume [GBytes] |      1.0230 |
+| Memory write bandwidth [MBytes/s] |      3.3247 |
+| Memory write data volume [GBytes] |      0.2563 |
+|    Memory bandwidth [MBytes/s]    |     16.5974 |
+|    Memory data volume [GBytes]    |      1.2793 |
+| Operational intensity [FLOP/Byte] |     75.0338 |
++-----------------------------------+-------------+
+--------------------------------------------------------------------------------
+CPU name:	Intel (R) Xeon (R) CPU Max 9480
+CPU type:	Intel SapphireRapids processor
+CPU clock:	1.90 GHz
+--------------------------------------------------------------------------------
+Group 11: FLOPS_AVX
++------------------------------------------+---------+--------------+
+|                   Event                  | Counter |  HWThread 10 |
++------------------------------------------+---------+--------------+
+|             INSTR_RETIRED_ANY            |  FIXC0  | 353977320520 |
+|           CPU_CLK_UNHALTED_CORE          |  FIXC1  | 143780398369 |
+|           CPU_CLK_UNHALTED_REF           |  FIXC2  | 143776961576 |
+|               TOPDOWN_SLOTS              |  FIXC3  | 862678555554 |
+| FP_ARITH_INST_RETIRED_256B_PACKED_SINGLE |   PMC0  |            0 |
+| FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE |   PMC1  |   6307470235 |
+| FP_ARITH_INST_RETIRED_512B_PACKED_SINGLE |   PMC2  |            0 |
+| FP_ARITH_INST_RETIRED_512B_PACKED_DOUBLE |   PMC3  |            0 |
++------------------------------------------+---------+--------------+
++----------------------+-------------+
+|        Metric        | HWThread 10 |
++----------------------+-------------+
+|  Runtime (RDTSC) [s] |     76.0155 |
+| Runtime unhalted [s] |     75.6747 |
+|      Clock [MHz]     |   1900.0262 |
+|          CPI         |      0.4062 |
+|  Packed SP [MFLOP/s] |           0 |
+|  Packed DP [MFLOP/s] |    331.9043 |
++----------------------+-------------+

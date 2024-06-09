@@ -1,0 +1,350 @@
+Restoring modules from user's ert
+***************************************************************************************************** 
+* WARNING: The 2021 software stack is not available on the 'genoa' partition.
+Please use the 2022 * 
+* software stack. * 
+* * 
+* If you have any question, please contact us via
+http://servicedesk.surfsara.nl. * 
+***************************************************************************************************** 
+
+Reading configuration from 'Config/config.snellius.01'...
+  Using existing results directory, Results.snellius.01...
+    Using existing run directory, Results.snellius.01/Run.006...
+
+FLOP count 1...
+
+  Building ERT core code...
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=1 -DERT_ALIGN=32 -DERT_MEMORY_MAX=1357905920 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_OPENMP -fopenmp -DERT_FP64 -c ./Drivers/driver1.cxx -o Results.snellius.01/Run.006/FLOPS.001/driver1.o 
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=1 -DERT_ALIGN=32 -DERT_MEMORY_MAX=1357905920 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_OPENMP -fopenmp -DERT_FP64 -c ./Kernels/kernel1.cxx -o Results.snellius.01/Run.006/FLOPS.001/kernel1.o 
+    mpic++ -fopenmp Results.snellius.01/Run.006/FLOPS.001/driver1.o Results.snellius.01/Run.006/FLOPS.001/kernel1.o -o Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 
+
+  Running ERT core code...
+    MPI 32, OpenMP 1
+    (export OMP_NUM_THREADS=1; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0001/try.001 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0001/try.002 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0001/try.003 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0001/try.004 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0001/try.005 2>&1 
+    touch Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0001/run.done 
+
+    MPI 32, OpenMP 2
+    (export OMP_NUM_THREADS=2; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0002/try.001 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0002/try.002 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0002/try.003 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0002/try.004 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0002/try.005 2>&1 
+    touch Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0002/run.done 
+
+    MPI 32, OpenMP 4
+    (export OMP_NUM_THREADS=4; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0004/try.001 2>&1 
+    (export OMP_NUM_THREADS=4; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0004/try.002 2>&1 
+    (export OMP_NUM_THREADS=4; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0004/try.003 2>&1 
+    (export OMP_NUM_THREADS=4; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0004/try.004 2>&1 
+    (export OMP_NUM_THREADS=4; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0004/try.005 2>&1 
+    touch Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0004/run.done 
+
+
+    MPI 64, OpenMP 1
+    (export OMP_NUM_THREADS=1; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0001/try.001 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0001/try.002 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0001/try.003 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0001/try.004 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0001/try.005 2>&1 
+    touch Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0001/run.done 
+
+    MPI 64, OpenMP 2
+    (export OMP_NUM_THREADS=2; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0002/try.001 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0002/try.002 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0002/try.003 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0002/try.004 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0002/try.005 2>&1 
+    touch Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0002/run.done 
+
+
+
+    MPI 128, OpenMP 1
+    (export OMP_NUM_THREADS=1; mpirun -np 128 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0128/OpenMP.0001/try.001 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 128 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0128/OpenMP.0001/try.002 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 128 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0128/OpenMP.0001/try.003 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 128 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0128/OpenMP.0001/try.004 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 128 Results.snellius.01/Run.006/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.001/MPI.0128/OpenMP.0001/try.005 2>&1 
+    touch Results.snellius.01/Run.006/FLOPS.001/MPI.0128/OpenMP.0001/run.done 
+
+
+
+
+  Processing results...
+    Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0001
+    cat Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0001/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0001/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0001/pre > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0001/max
+    ./Scripts/summary.py < Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0001/max > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0001/sum
+
+    Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0002
+    cat Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0002/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0002/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0002/pre > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0002/max
+    ./Scripts/summary.py < Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0002/max > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0002/sum
+
+    Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0004
+    cat Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0004/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0004/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0004/pre > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0004/max
+    ./Scripts/summary.py < Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0004/max > Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0004/sum
+
+    Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0001
+    cat Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0001/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0001/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0001/pre > Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0001/max
+    ./Scripts/summary.py < Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0001/max > Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0001/sum
+
+    Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0002
+    cat Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0002/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0002/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0002/pre > Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0002/max
+    ./Scripts/summary.py < Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0002/max > Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0002/sum
+
+    Results.snellius.01/Run.006/FLOPS.001/MPI.0128/OpenMP.0001
+    cat Results.snellius.01/Run.006/FLOPS.001/MPI.0128/OpenMP.0001/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.006/FLOPS.001/MPI.0128/OpenMP.0001/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.006/FLOPS.001/MPI.0128/OpenMP.0001/pre > Results.snellius.01/Run.006/FLOPS.001/MPI.0128/OpenMP.0001/max
+    ./Scripts/summary.py < Results.snellius.01/Run.006/FLOPS.001/MPI.0128/OpenMP.0001/max > Results.snellius.01/Run.006/FLOPS.001/MPI.0128/OpenMP.0001/sum
+
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0001/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0001/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0001/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0001/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0002/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0002/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0002/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0002/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0004/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0004/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0004/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0032/OpenMP.0004/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0001/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0001/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0001/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0001/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0002/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0002/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0002/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0064/OpenMP.0002/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0128/OpenMP.0001/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0128/OpenMP.0001/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0128/OpenMP.0001/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.001/MPI.0128/OpenMP.0001/graph4.gnu"' | gnuplot
+
+
+FLOP count 2...
+    mkdir Results.snellius.01/Run.006/FLOPS.002 
+
+  Building ERT core code...
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=2 -DERT_ALIGN=32 -DERT_MEMORY_MAX=1357905920 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_OPENMP -fopenmp -DERT_FP64 -c ./Drivers/driver1.cxx -o Results.snellius.01/Run.006/FLOPS.002/driver1.o 
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=2 -DERT_ALIGN=32 -DERT_MEMORY_MAX=1357905920 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_OPENMP -fopenmp -DERT_FP64 -c ./Kernels/kernel1.cxx -o Results.snellius.01/Run.006/FLOPS.002/kernel1.o 
+    mpic++ -fopenmp Results.snellius.01/Run.006/FLOPS.002/driver1.o Results.snellius.01/Run.006/FLOPS.002/kernel1.o -o Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 
+
+  Running ERT core code...
+    mkdir Results.snellius.01/Run.006/FLOPS.002/MPI.0032 
+    mkdir Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0001 
+    MPI 32, OpenMP 1
+    (export OMP_NUM_THREADS=1; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0001/try.001 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0001/try.002 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0001/try.003 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0001/try.004 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0001/try.005 2>&1 
+    touch Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0001/run.done 
+
+    mkdir Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0002 
+    MPI 32, OpenMP 2
+    (export OMP_NUM_THREADS=2; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0002/try.001 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0002/try.002 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0002/try.003 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0002/try.004 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0002/try.005 2>&1 
+    touch Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0002/run.done 
+
+    mkdir Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0004 
+    MPI 32, OpenMP 4
+    (export OMP_NUM_THREADS=4; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0004/try.001 2>&1 
+    (export OMP_NUM_THREADS=4; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0004/try.002 2>&1 
+    (export OMP_NUM_THREADS=4; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0004/try.003 2>&1 
+    (export OMP_NUM_THREADS=4; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0004/try.004 2>&1 
+    (export OMP_NUM_THREADS=4; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0004/try.005 2>&1 
+    touch Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0004/run.done 
+
+
+    mkdir Results.snellius.01/Run.006/FLOPS.002/MPI.0064 
+    mkdir Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0001 
+    MPI 64, OpenMP 1
+    (export OMP_NUM_THREADS=1; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0001/try.001 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0001/try.002 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0001/try.003 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0001/try.004 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0001/try.005 2>&1 
+    touch Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0001/run.done 
+
+    mkdir Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0002 
+    MPI 64, OpenMP 2
+    (export OMP_NUM_THREADS=2; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0002/try.001 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0002/try.002 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0002/try.003 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0002/try.004 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0002/try.005 2>&1 
+    touch Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0002/run.done 
+
+
+
+    mkdir Results.snellius.01/Run.006/FLOPS.002/MPI.0128 
+    mkdir Results.snellius.01/Run.006/FLOPS.002/MPI.0128/OpenMP.0001 
+    MPI 128, OpenMP 1
+    (export OMP_NUM_THREADS=1; mpirun -np 128 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0128/OpenMP.0001/try.001 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 128 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0128/OpenMP.0001/try.002 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 128 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0128/OpenMP.0001/try.003 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 128 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0128/OpenMP.0001/try.004 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 128 Results.snellius.01/Run.006/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.002/MPI.0128/OpenMP.0001/try.005 2>&1 
+    touch Results.snellius.01/Run.006/FLOPS.002/MPI.0128/OpenMP.0001/run.done 
+
+
+
+
+  Processing results...
+    Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0001
+    cat Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0001/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0001/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0001/pre > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0001/max
+    ./Scripts/summary.py < Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0001/max > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0001/sum
+
+    Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0002
+    cat Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0002/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0002/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0002/pre > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0002/max
+    ./Scripts/summary.py < Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0002/max > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0002/sum
+
+    Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0004
+    cat Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0004/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0004/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0004/pre > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0004/max
+    ./Scripts/summary.py < Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0004/max > Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0004/sum
+
+    Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0001
+    cat Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0001/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0001/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0001/pre > Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0001/max
+    ./Scripts/summary.py < Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0001/max > Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0001/sum
+
+    Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0002
+    cat Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0002/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0002/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0002/pre > Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0002/max
+    ./Scripts/summary.py < Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0002/max > Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0002/sum
+
+    Results.snellius.01/Run.006/FLOPS.002/MPI.0128/OpenMP.0001
+    cat Results.snellius.01/Run.006/FLOPS.002/MPI.0128/OpenMP.0001/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.006/FLOPS.002/MPI.0128/OpenMP.0001/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.006/FLOPS.002/MPI.0128/OpenMP.0001/pre > Results.snellius.01/Run.006/FLOPS.002/MPI.0128/OpenMP.0001/max
+    ./Scripts/summary.py < Results.snellius.01/Run.006/FLOPS.002/MPI.0128/OpenMP.0001/max > Results.snellius.01/Run.006/FLOPS.002/MPI.0128/OpenMP.0001/sum
+
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0001/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0001/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0001/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0001/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0002/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0002/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0002/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0002/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0004/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0004/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0004/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0032/OpenMP.0004/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0001/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0001/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0001/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0001/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0002/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0002/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0002/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0064/OpenMP.0002/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0128/OpenMP.0001/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0128/OpenMP.0001/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0128/OpenMP.0001/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.006/FLOPS.002/MPI.0128/OpenMP.0001/graph4.gnu"' | gnuplot
+
+
+FLOP count 4...
+    mkdir Results.snellius.01/Run.006/FLOPS.004 
+
+  Building ERT core code...
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=4 -DERT_ALIGN=32 -DERT_MEMORY_MAX=1357905920 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_OPENMP -fopenmp -DERT_FP64 -c ./Drivers/driver1.cxx -o Results.snellius.01/Run.006/FLOPS.004/driver1.o 
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=4 -DERT_ALIGN=32 -DERT_MEMORY_MAX=1357905920 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_OPENMP -fopenmp -DERT_FP64 -c ./Kernels/kernel1.cxx -o Results.snellius.01/Run.006/FLOPS.004/kernel1.o 
+    mpic++ -fopenmp Results.snellius.01/Run.006/FLOPS.004/driver1.o Results.snellius.01/Run.006/FLOPS.004/kernel1.o -o Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 
+
+  Running ERT core code...
+    mkdir Results.snellius.01/Run.006/FLOPS.004/MPI.0032 
+    mkdir Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0001 
+    MPI 32, OpenMP 1
+    (export OMP_NUM_THREADS=1; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0001/try.001 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0001/try.002 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0001/try.003 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0001/try.004 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0001/try.005 2>&1 
+    touch Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0001/run.done 
+
+    mkdir Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0002 
+    MPI 32, OpenMP 2
+    (export OMP_NUM_THREADS=2; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0002/try.001 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0002/try.002 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0002/try.003 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0002/try.004 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0002/try.005 2>&1 
+    touch Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0002/run.done 
+
+    mkdir Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0004 
+    MPI 32, OpenMP 4
+    (export OMP_NUM_THREADS=4; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0004/try.001 2>&1 
+    (export OMP_NUM_THREADS=4; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0004/try.002 2>&1 
+    (export OMP_NUM_THREADS=4; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0004/try.003 2>&1 
+    (export OMP_NUM_THREADS=4; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0004/try.004 2>&1 
+    (export OMP_NUM_THREADS=4; mpirun -np 32 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0004/try.005 2>&1 
+    touch Results.snellius.01/Run.006/FLOPS.004/MPI.0032/OpenMP.0004/run.done 
+
+
+    mkdir Results.snellius.01/Run.006/FLOPS.004/MPI.0064 
+    mkdir Results.snellius.01/Run.006/FLOPS.004/MPI.0064/OpenMP.0001 
+    MPI 64, OpenMP 1
+    (export OMP_NUM_THREADS=1; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0064/OpenMP.0001/try.001 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0064/OpenMP.0001/try.002 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0064/OpenMP.0001/try.003 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0064/OpenMP.0001/try.004 2>&1 
+    (export OMP_NUM_THREADS=1; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0064/OpenMP.0001/try.005 2>&1 
+    touch Results.snellius.01/Run.006/FLOPS.004/MPI.0064/OpenMP.0001/run.done 
+
+    mkdir Results.snellius.01/Run.006/FLOPS.004/MPI.0064/OpenMP.0002 
+    MPI 64, OpenMP 2
+    (export OMP_NUM_THREADS=2; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0064/OpenMP.0002/try.001 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0064/OpenMP.0002/try.002 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0064/OpenMP.0002/try.003 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0064/OpenMP.0002/try.004 2>&1 
+    (export OMP_NUM_THREADS=2; mpirun -np 64 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0064/OpenMP.0002/try.005 2>&1 
+    touch Results.snellius.01/Run.006/FLOPS.004/MPI.0064/OpenMP.0002/run.done 
+
+
+
+    mkdir Results.snellius.01/Run.006/FLOPS.004/MPI.0128 
+    mkdir Results.snellius.01/Run.006/FLOPS.004/MPI.0128/OpenMP.0001 
+    MPI 128, OpenMP 1
+    (export OMP_NUM_THREADS=1; mpirun -np 128 Results.snellius.01/Run.006/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.006/FLOPS.004/MPI.0128/OpenMP.0001/try.001 2>&1 
+slurmstepd: error: *** JOB 5160951 ON tcn46 CANCELLED AT 2024-02-08T10:42:11 DUE TO TIME LIMIT ***
+
+JOB STATISTICS
+==============
+Job ID: 5160951
+Cluster: snellius
+User/Group: jvandijk/jvandijk
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 128
+CPU Utilized: 00:00:04
+CPU Efficiency: 0.00% of 1-19:05:36 core-walltime
+Job Wall-clock time: 00:20:12
+Memory Utilized: 10.12 GB
+Memory Efficiency: 4.52% of 224.00 GB

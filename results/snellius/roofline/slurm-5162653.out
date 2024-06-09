@@ -1,0 +1,462 @@
+Restoring modules from user's ert
+***************************************************************************************************** 
+* WARNING: The 2021 software stack is not available on the 'genoa' partition.
+Please use the 2022 * 
+* software stack. * 
+* * 
+* If you have any question, please contact us via
+http://servicedesk.surfsara.nl. * 
+***************************************************************************************************** 
+
+Reading configuration from 'Config/config.snellius.01'...
+  Using existing results directory, Results.snellius.01...
+
+*** WARNING ***
+**
+**  Making new run directory, 'Results.snellius.01/Run.008',
+**    because the current connfiguration file, 'Config/config.snellius.01' 
+**    doesn't match the configuration files, 'config.ert', under:
+**
+**      Results.snellius.01/Run.001
+**      Results.snellius.01/Run.002
+**      Results.snellius.01/Run.003
+**      Results.snellius.01/Run.004
+**      Results.snellius.01/Run.005
+**      Results.snellius.01/Run.006
+**      Results.snellius.01/Run.007
+**
+*** WARNING ***
+    mkdir Results.snellius.01/Run.008 
+    cp Config/config.snellius.01 Results.snellius.01/Run.008/config.ert 
+
+FLOP count 1...
+    mkdir Results.snellius.01/Run.008/FLOPS.001 
+
+  Building ERT core code...
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=1 -DERT_ALIGN=32 -DERT_MEMORY_MAX=1357905920 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Drivers/driver1.cxx -o Results.snellius.01/Run.008/FLOPS.001/driver1.o 
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=1 -DERT_ALIGN=32 -DERT_MEMORY_MAX=1357905920 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Kernels/kernel1.cxx -o Results.snellius.01/Run.008/FLOPS.001/kernel1.o 
+    mpic++ Results.snellius.01/Run.008/FLOPS.001/driver1.o Results.snellius.01/Run.008/FLOPS.001/kernel1.o -o Results.snellius.01/Run.008/FLOPS.001/driver1.kernel1 
+
+  Running ERT core code...
+    mkdir Results.snellius.01/Run.008/FLOPS.001/MPI.0032 
+    MPI 32
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.001/MPI.0032/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.001/MPI.0032/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.001/MPI.0032/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.001/MPI.0032/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.001/MPI.0032/try.005 2>&1 
+    touch Results.snellius.01/Run.008/FLOPS.001/MPI.0032/run.done 
+
+    mkdir Results.snellius.01/Run.008/FLOPS.001/MPI.0064 
+    MPI 64
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.001/MPI.0064/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.001/MPI.0064/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.001/MPI.0064/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.001/MPI.0064/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.001/MPI.0064/try.005 2>&1 
+    touch Results.snellius.01/Run.008/FLOPS.001/MPI.0064/run.done 
+
+    mkdir Results.snellius.01/Run.008/FLOPS.001/MPI.0128 
+    MPI 128
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.001/MPI.0128/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.001/MPI.0128/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.001/MPI.0128/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.001/MPI.0128/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.001/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.001/MPI.0128/try.005 2>&1 
+    touch Results.snellius.01/Run.008/FLOPS.001/MPI.0128/run.done 
+
+  Processing results...
+    Results.snellius.01/Run.008/FLOPS.001/MPI.0032
+    cat Results.snellius.01/Run.008/FLOPS.001/MPI.0032/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.008/FLOPS.001/MPI.0032/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.008/FLOPS.001/MPI.0032/pre > Results.snellius.01/Run.008/FLOPS.001/MPI.0032/max
+    ./Scripts/summary.py < Results.snellius.01/Run.008/FLOPS.001/MPI.0032/max > Results.snellius.01/Run.008/FLOPS.001/MPI.0032/sum
+
+    Results.snellius.01/Run.008/FLOPS.001/MPI.0064
+    cat Results.snellius.01/Run.008/FLOPS.001/MPI.0064/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.008/FLOPS.001/MPI.0064/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.008/FLOPS.001/MPI.0064/pre > Results.snellius.01/Run.008/FLOPS.001/MPI.0064/max
+    ./Scripts/summary.py < Results.snellius.01/Run.008/FLOPS.001/MPI.0064/max > Results.snellius.01/Run.008/FLOPS.001/MPI.0064/sum
+
+    Results.snellius.01/Run.008/FLOPS.001/MPI.0128
+    cat Results.snellius.01/Run.008/FLOPS.001/MPI.0128/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.008/FLOPS.001/MPI.0128/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.008/FLOPS.001/MPI.0128/pre > Results.snellius.01/Run.008/FLOPS.001/MPI.0128/max
+    ./Scripts/summary.py < Results.snellius.01/Run.008/FLOPS.001/MPI.0128/max > Results.snellius.01/Run.008/FLOPS.001/MPI.0128/sum
+
+    echo 'load "Results.snellius.01/Run.008/FLOPS.001/MPI.0032/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.001/MPI.0032/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.001/MPI.0032/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.001/MPI.0032/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.008/FLOPS.001/MPI.0064/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.001/MPI.0064/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.001/MPI.0064/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.001/MPI.0064/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.008/FLOPS.001/MPI.0128/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.001/MPI.0128/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.001/MPI.0128/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.001/MPI.0128/graph4.gnu"' | gnuplot
+
+
+FLOP count 2...
+    mkdir Results.snellius.01/Run.008/FLOPS.002 
+
+  Building ERT core code...
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=2 -DERT_ALIGN=32 -DERT_MEMORY_MAX=1357905920 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Drivers/driver1.cxx -o Results.snellius.01/Run.008/FLOPS.002/driver1.o 
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=2 -DERT_ALIGN=32 -DERT_MEMORY_MAX=1357905920 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Kernels/kernel1.cxx -o Results.snellius.01/Run.008/FLOPS.002/kernel1.o 
+    mpic++ Results.snellius.01/Run.008/FLOPS.002/driver1.o Results.snellius.01/Run.008/FLOPS.002/kernel1.o -o Results.snellius.01/Run.008/FLOPS.002/driver1.kernel1 
+
+  Running ERT core code...
+    mkdir Results.snellius.01/Run.008/FLOPS.002/MPI.0032 
+    MPI 32
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.002/MPI.0032/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.002/MPI.0032/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.002/MPI.0032/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.002/MPI.0032/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.002/MPI.0032/try.005 2>&1 
+    touch Results.snellius.01/Run.008/FLOPS.002/MPI.0032/run.done 
+
+    mkdir Results.snellius.01/Run.008/FLOPS.002/MPI.0064 
+    MPI 64
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.002/MPI.0064/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.002/MPI.0064/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.002/MPI.0064/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.002/MPI.0064/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.002/MPI.0064/try.005 2>&1 
+    touch Results.snellius.01/Run.008/FLOPS.002/MPI.0064/run.done 
+
+    mkdir Results.snellius.01/Run.008/FLOPS.002/MPI.0128 
+    MPI 128
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.002/MPI.0128/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.002/MPI.0128/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.002/MPI.0128/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.002/MPI.0128/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.002/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.002/MPI.0128/try.005 2>&1 
+    touch Results.snellius.01/Run.008/FLOPS.002/MPI.0128/run.done 
+
+  Processing results...
+    Results.snellius.01/Run.008/FLOPS.002/MPI.0032
+    cat Results.snellius.01/Run.008/FLOPS.002/MPI.0032/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.008/FLOPS.002/MPI.0032/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.008/FLOPS.002/MPI.0032/pre > Results.snellius.01/Run.008/FLOPS.002/MPI.0032/max
+    ./Scripts/summary.py < Results.snellius.01/Run.008/FLOPS.002/MPI.0032/max > Results.snellius.01/Run.008/FLOPS.002/MPI.0032/sum
+
+    Results.snellius.01/Run.008/FLOPS.002/MPI.0064
+    cat Results.snellius.01/Run.008/FLOPS.002/MPI.0064/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.008/FLOPS.002/MPI.0064/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.008/FLOPS.002/MPI.0064/pre > Results.snellius.01/Run.008/FLOPS.002/MPI.0064/max
+    ./Scripts/summary.py < Results.snellius.01/Run.008/FLOPS.002/MPI.0064/max > Results.snellius.01/Run.008/FLOPS.002/MPI.0064/sum
+
+    Results.snellius.01/Run.008/FLOPS.002/MPI.0128
+    cat Results.snellius.01/Run.008/FLOPS.002/MPI.0128/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.008/FLOPS.002/MPI.0128/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.008/FLOPS.002/MPI.0128/pre > Results.snellius.01/Run.008/FLOPS.002/MPI.0128/max
+    ./Scripts/summary.py < Results.snellius.01/Run.008/FLOPS.002/MPI.0128/max > Results.snellius.01/Run.008/FLOPS.002/MPI.0128/sum
+
+    echo 'load "Results.snellius.01/Run.008/FLOPS.002/MPI.0032/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.002/MPI.0032/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.002/MPI.0032/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.002/MPI.0032/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.008/FLOPS.002/MPI.0064/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.002/MPI.0064/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.002/MPI.0064/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.002/MPI.0064/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.008/FLOPS.002/MPI.0128/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.002/MPI.0128/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.002/MPI.0128/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.002/MPI.0128/graph4.gnu"' | gnuplot
+
+
+FLOP count 4...
+    mkdir Results.snellius.01/Run.008/FLOPS.004 
+
+  Building ERT core code...
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=4 -DERT_ALIGN=32 -DERT_MEMORY_MAX=1357905920 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Drivers/driver1.cxx -o Results.snellius.01/Run.008/FLOPS.004/driver1.o 
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=4 -DERT_ALIGN=32 -DERT_MEMORY_MAX=1357905920 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Kernels/kernel1.cxx -o Results.snellius.01/Run.008/FLOPS.004/kernel1.o 
+    mpic++ Results.snellius.01/Run.008/FLOPS.004/driver1.o Results.snellius.01/Run.008/FLOPS.004/kernel1.o -o Results.snellius.01/Run.008/FLOPS.004/driver1.kernel1 
+
+  Running ERT core code...
+    mkdir Results.snellius.01/Run.008/FLOPS.004/MPI.0032 
+    MPI 32
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.004/MPI.0032/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.004/MPI.0032/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.004/MPI.0032/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.004/MPI.0032/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.004/MPI.0032/try.005 2>&1 
+    touch Results.snellius.01/Run.008/FLOPS.004/MPI.0032/run.done 
+
+    mkdir Results.snellius.01/Run.008/FLOPS.004/MPI.0064 
+    MPI 64
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.004/MPI.0064/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.004/MPI.0064/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.004/MPI.0064/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.004/MPI.0064/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.004/MPI.0064/try.005 2>&1 
+    touch Results.snellius.01/Run.008/FLOPS.004/MPI.0064/run.done 
+
+    mkdir Results.snellius.01/Run.008/FLOPS.004/MPI.0128 
+    MPI 128
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.004/MPI.0128/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.004/MPI.0128/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.004/MPI.0128/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.004/MPI.0128/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.004/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.004/MPI.0128/try.005 2>&1 
+    touch Results.snellius.01/Run.008/FLOPS.004/MPI.0128/run.done 
+
+  Processing results...
+    Results.snellius.01/Run.008/FLOPS.004/MPI.0032
+    cat Results.snellius.01/Run.008/FLOPS.004/MPI.0032/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.008/FLOPS.004/MPI.0032/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.008/FLOPS.004/MPI.0032/pre > Results.snellius.01/Run.008/FLOPS.004/MPI.0032/max
+    ./Scripts/summary.py < Results.snellius.01/Run.008/FLOPS.004/MPI.0032/max > Results.snellius.01/Run.008/FLOPS.004/MPI.0032/sum
+
+    Results.snellius.01/Run.008/FLOPS.004/MPI.0064
+    cat Results.snellius.01/Run.008/FLOPS.004/MPI.0064/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.008/FLOPS.004/MPI.0064/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.008/FLOPS.004/MPI.0064/pre > Results.snellius.01/Run.008/FLOPS.004/MPI.0064/max
+    ./Scripts/summary.py < Results.snellius.01/Run.008/FLOPS.004/MPI.0064/max > Results.snellius.01/Run.008/FLOPS.004/MPI.0064/sum
+
+    Results.snellius.01/Run.008/FLOPS.004/MPI.0128
+    cat Results.snellius.01/Run.008/FLOPS.004/MPI.0128/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.008/FLOPS.004/MPI.0128/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.008/FLOPS.004/MPI.0128/pre > Results.snellius.01/Run.008/FLOPS.004/MPI.0128/max
+    ./Scripts/summary.py < Results.snellius.01/Run.008/FLOPS.004/MPI.0128/max > Results.snellius.01/Run.008/FLOPS.004/MPI.0128/sum
+
+    echo 'load "Results.snellius.01/Run.008/FLOPS.004/MPI.0032/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.004/MPI.0032/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.004/MPI.0032/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.004/MPI.0032/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.008/FLOPS.004/MPI.0064/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.004/MPI.0064/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.004/MPI.0064/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.004/MPI.0064/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.008/FLOPS.004/MPI.0128/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.004/MPI.0128/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.004/MPI.0128/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.004/MPI.0128/graph4.gnu"' | gnuplot
+
+
+FLOP count 8...
+    mkdir Results.snellius.01/Run.008/FLOPS.008 
+
+  Building ERT core code...
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=8 -DERT_ALIGN=32 -DERT_MEMORY_MAX=1357905920 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Drivers/driver1.cxx -o Results.snellius.01/Run.008/FLOPS.008/driver1.o 
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=8 -DERT_ALIGN=32 -DERT_MEMORY_MAX=1357905920 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Kernels/kernel1.cxx -o Results.snellius.01/Run.008/FLOPS.008/kernel1.o 
+    mpic++ Results.snellius.01/Run.008/FLOPS.008/driver1.o Results.snellius.01/Run.008/FLOPS.008/kernel1.o -o Results.snellius.01/Run.008/FLOPS.008/driver1.kernel1 
+
+  Running ERT core code...
+    mkdir Results.snellius.01/Run.008/FLOPS.008/MPI.0032 
+    MPI 32
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.008/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.008/MPI.0032/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.008/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.008/MPI.0032/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.008/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.008/MPI.0032/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.008/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.008/MPI.0032/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.008/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.008/MPI.0032/try.005 2>&1 
+    touch Results.snellius.01/Run.008/FLOPS.008/MPI.0032/run.done 
+
+    mkdir Results.snellius.01/Run.008/FLOPS.008/MPI.0064 
+    MPI 64
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.008/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.008/MPI.0064/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.008/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.008/MPI.0064/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.008/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.008/MPI.0064/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.008/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.008/MPI.0064/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.008/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.008/MPI.0064/try.005 2>&1 
+    touch Results.snellius.01/Run.008/FLOPS.008/MPI.0064/run.done 
+
+    mkdir Results.snellius.01/Run.008/FLOPS.008/MPI.0128 
+    MPI 128
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.008/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.008/MPI.0128/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.008/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.008/MPI.0128/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.008/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.008/MPI.0128/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.008/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.008/MPI.0128/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.008/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.008/MPI.0128/try.005 2>&1 
+    touch Results.snellius.01/Run.008/FLOPS.008/MPI.0128/run.done 
+
+  Processing results...
+    Results.snellius.01/Run.008/FLOPS.008/MPI.0032
+    cat Results.snellius.01/Run.008/FLOPS.008/MPI.0032/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.008/FLOPS.008/MPI.0032/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.008/FLOPS.008/MPI.0032/pre > Results.snellius.01/Run.008/FLOPS.008/MPI.0032/max
+    ./Scripts/summary.py < Results.snellius.01/Run.008/FLOPS.008/MPI.0032/max > Results.snellius.01/Run.008/FLOPS.008/MPI.0032/sum
+
+    Results.snellius.01/Run.008/FLOPS.008/MPI.0064
+    cat Results.snellius.01/Run.008/FLOPS.008/MPI.0064/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.008/FLOPS.008/MPI.0064/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.008/FLOPS.008/MPI.0064/pre > Results.snellius.01/Run.008/FLOPS.008/MPI.0064/max
+    ./Scripts/summary.py < Results.snellius.01/Run.008/FLOPS.008/MPI.0064/max > Results.snellius.01/Run.008/FLOPS.008/MPI.0064/sum
+
+    Results.snellius.01/Run.008/FLOPS.008/MPI.0128
+    cat Results.snellius.01/Run.008/FLOPS.008/MPI.0128/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.008/FLOPS.008/MPI.0128/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.008/FLOPS.008/MPI.0128/pre > Results.snellius.01/Run.008/FLOPS.008/MPI.0128/max
+    ./Scripts/summary.py < Results.snellius.01/Run.008/FLOPS.008/MPI.0128/max > Results.snellius.01/Run.008/FLOPS.008/MPI.0128/sum
+
+    echo 'load "Results.snellius.01/Run.008/FLOPS.008/MPI.0032/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.008/MPI.0032/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.008/MPI.0032/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.008/MPI.0032/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.008/FLOPS.008/MPI.0064/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.008/MPI.0064/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.008/MPI.0064/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.008/MPI.0064/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.008/FLOPS.008/MPI.0128/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.008/MPI.0128/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.008/MPI.0128/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.008/MPI.0128/graph4.gnu"' | gnuplot
+
+
+FLOP count 16...
+    mkdir Results.snellius.01/Run.008/FLOPS.016 
+
+  Building ERT core code...
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=16 -DERT_ALIGN=32 -DERT_MEMORY_MAX=1357905920 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Drivers/driver1.cxx -o Results.snellius.01/Run.008/FLOPS.016/driver1.o 
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=16 -DERT_ALIGN=32 -DERT_MEMORY_MAX=1357905920 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Kernels/kernel1.cxx -o Results.snellius.01/Run.008/FLOPS.016/kernel1.o 
+    mpic++ Results.snellius.01/Run.008/FLOPS.016/driver1.o Results.snellius.01/Run.008/FLOPS.016/kernel1.o -o Results.snellius.01/Run.008/FLOPS.016/driver1.kernel1 
+
+  Running ERT core code...
+    mkdir Results.snellius.01/Run.008/FLOPS.016/MPI.0032 
+    MPI 32
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.016/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.016/MPI.0032/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.016/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.016/MPI.0032/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.016/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.016/MPI.0032/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.016/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.016/MPI.0032/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.016/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.016/MPI.0032/try.005 2>&1 
+    touch Results.snellius.01/Run.008/FLOPS.016/MPI.0032/run.done 
+
+    mkdir Results.snellius.01/Run.008/FLOPS.016/MPI.0064 
+    MPI 64
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.016/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.016/MPI.0064/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.016/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.016/MPI.0064/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.016/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.016/MPI.0064/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.016/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.016/MPI.0064/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.016/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.016/MPI.0064/try.005 2>&1 
+    touch Results.snellius.01/Run.008/FLOPS.016/MPI.0064/run.done 
+
+    mkdir Results.snellius.01/Run.008/FLOPS.016/MPI.0128 
+    MPI 128
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.016/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.016/MPI.0128/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.016/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.016/MPI.0128/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.016/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.016/MPI.0128/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.016/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.016/MPI.0128/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.016/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.016/MPI.0128/try.005 2>&1 
+    touch Results.snellius.01/Run.008/FLOPS.016/MPI.0128/run.done 
+
+  Processing results...
+    Results.snellius.01/Run.008/FLOPS.016/MPI.0032
+    cat Results.snellius.01/Run.008/FLOPS.016/MPI.0032/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.008/FLOPS.016/MPI.0032/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.008/FLOPS.016/MPI.0032/pre > Results.snellius.01/Run.008/FLOPS.016/MPI.0032/max
+    ./Scripts/summary.py < Results.snellius.01/Run.008/FLOPS.016/MPI.0032/max > Results.snellius.01/Run.008/FLOPS.016/MPI.0032/sum
+
+    Results.snellius.01/Run.008/FLOPS.016/MPI.0064
+    cat Results.snellius.01/Run.008/FLOPS.016/MPI.0064/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.008/FLOPS.016/MPI.0064/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.008/FLOPS.016/MPI.0064/pre > Results.snellius.01/Run.008/FLOPS.016/MPI.0064/max
+    ./Scripts/summary.py < Results.snellius.01/Run.008/FLOPS.016/MPI.0064/max > Results.snellius.01/Run.008/FLOPS.016/MPI.0064/sum
+
+    Results.snellius.01/Run.008/FLOPS.016/MPI.0128
+    cat Results.snellius.01/Run.008/FLOPS.016/MPI.0128/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.008/FLOPS.016/MPI.0128/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.008/FLOPS.016/MPI.0128/pre > Results.snellius.01/Run.008/FLOPS.016/MPI.0128/max
+    ./Scripts/summary.py < Results.snellius.01/Run.008/FLOPS.016/MPI.0128/max > Results.snellius.01/Run.008/FLOPS.016/MPI.0128/sum
+
+    echo 'load "Results.snellius.01/Run.008/FLOPS.016/MPI.0032/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.016/MPI.0032/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.016/MPI.0032/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.016/MPI.0032/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.008/FLOPS.016/MPI.0064/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.016/MPI.0064/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.016/MPI.0064/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.016/MPI.0064/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.008/FLOPS.016/MPI.0128/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.016/MPI.0128/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.016/MPI.0128/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.016/MPI.0128/graph4.gnu"' | gnuplot
+
+
+FLOP count 32...
+    mkdir Results.snellius.01/Run.008/FLOPS.032 
+
+  Building ERT core code...
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=32 -DERT_ALIGN=32 -DERT_MEMORY_MAX=1357905920 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Drivers/driver1.cxx -o Results.snellius.01/Run.008/FLOPS.032/driver1.o 
+    mpic++ -Ofast -fargument-noalias -mavx2 -I./Kernels -DERT_FLOP=32 -DERT_ALIGN=32 -DERT_MEMORY_MAX=1357905920 -DERT_WORKING_SET_MIN=1 -DERT_TRIALS_MIN=1 -DERT_WSS_MULT=1.1 -DERT_MPI -DERT_FP64 -c ./Kernels/kernel1.cxx -o Results.snellius.01/Run.008/FLOPS.032/kernel1.o 
+    mpic++ Results.snellius.01/Run.008/FLOPS.032/driver1.o Results.snellius.01/Run.008/FLOPS.032/kernel1.o -o Results.snellius.01/Run.008/FLOPS.032/driver1.kernel1 
+
+  Running ERT core code...
+    mkdir Results.snellius.01/Run.008/FLOPS.032/MPI.0032 
+    MPI 32
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.032/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.032/MPI.0032/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.032/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.032/MPI.0032/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.032/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.032/MPI.0032/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.032/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.032/MPI.0032/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 32 Results.snellius.01/Run.008/FLOPS.032/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.032/MPI.0032/try.005 2>&1 
+    touch Results.snellius.01/Run.008/FLOPS.032/MPI.0032/run.done 
+
+    mkdir Results.snellius.01/Run.008/FLOPS.032/MPI.0064 
+    MPI 64
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.032/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.032/MPI.0064/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.032/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.032/MPI.0064/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.032/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.032/MPI.0064/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.032/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.032/MPI.0064/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 64 Results.snellius.01/Run.008/FLOPS.032/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.032/MPI.0064/try.005 2>&1 
+    touch Results.snellius.01/Run.008/FLOPS.032/MPI.0064/run.done 
+
+    mkdir Results.snellius.01/Run.008/FLOPS.032/MPI.0128 
+    MPI 128
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.032/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.032/MPI.0128/try.001 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.032/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.032/MPI.0128/try.002 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.032/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.032/MPI.0128/try.003 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.032/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.032/MPI.0128/try.004 2>&1 
+    (export OMP_NUM_THREADS=ERT_OPENMP_THREADS; mpirun -np 128 Results.snellius.01/Run.008/FLOPS.032/driver1.kernel1 ) > Results.snellius.01/Run.008/FLOPS.032/MPI.0128/try.005 2>&1 
+    touch Results.snellius.01/Run.008/FLOPS.032/MPI.0128/run.done 
+
+  Processing results...
+    Results.snellius.01/Run.008/FLOPS.032/MPI.0032
+    cat Results.snellius.01/Run.008/FLOPS.032/MPI.0032/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.008/FLOPS.032/MPI.0032/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.008/FLOPS.032/MPI.0032/pre > Results.snellius.01/Run.008/FLOPS.032/MPI.0032/max
+    ./Scripts/summary.py < Results.snellius.01/Run.008/FLOPS.032/MPI.0032/max > Results.snellius.01/Run.008/FLOPS.032/MPI.0032/sum
+
+    Results.snellius.01/Run.008/FLOPS.032/MPI.0064
+    cat Results.snellius.01/Run.008/FLOPS.032/MPI.0064/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.008/FLOPS.032/MPI.0064/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.008/FLOPS.032/MPI.0064/pre > Results.snellius.01/Run.008/FLOPS.032/MPI.0064/max
+    ./Scripts/summary.py < Results.snellius.01/Run.008/FLOPS.032/MPI.0064/max > Results.snellius.01/Run.008/FLOPS.032/MPI.0064/sum
+
+    Results.snellius.01/Run.008/FLOPS.032/MPI.0128
+    cat Results.snellius.01/Run.008/FLOPS.032/MPI.0128/try.* | ./Scripts/preprocess.py > Results.snellius.01/Run.008/FLOPS.032/MPI.0128/pre
+    ./Scripts/maximum.py < Results.snellius.01/Run.008/FLOPS.032/MPI.0128/pre > Results.snellius.01/Run.008/FLOPS.032/MPI.0128/max
+    ./Scripts/summary.py < Results.snellius.01/Run.008/FLOPS.032/MPI.0128/max > Results.snellius.01/Run.008/FLOPS.032/MPI.0128/sum
+
+    echo 'load "Results.snellius.01/Run.008/FLOPS.032/MPI.0032/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.032/MPI.0032/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.032/MPI.0032/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.032/MPI.0032/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.008/FLOPS.032/MPI.0064/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.032/MPI.0064/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.032/MPI.0064/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.032/MPI.0064/graph4.gnu"' | gnuplot
+
+    echo 'load "Results.snellius.01/Run.008/FLOPS.032/MPI.0128/graph1.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.032/MPI.0128/graph2.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.032/MPI.0128/graph3.gnu"' | gnuplot
+    echo 'load "Results.snellius.01/Run.008/FLOPS.032/MPI.0128/graph4.gnu"' | gnuplot
+
+
+Gathering the final roofline results...
+    cat Results.snellius.01/Run.008/*/*/sum | ./Scripts/roofline.py
+    echo 'load "Results.snellius.01/Run.008/roofline.gnu"' | gnuplot
+
++-------------------------------------------------
+| Empirical roofline graph:    'Results.snellius.01/Run.008/roofline.ps'
+| Empirical roofline database: 'Results.snellius.01/Run.008/roofline.json'
++-------------------------------------------------
+
+
+JOB STATISTICS
+==============
+Job ID: 5162653
+Cluster: snellius
+User/Group: jvandijk/jvandijk
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 128
+CPU Utilized: 07:45:01
+CPU Efficiency: 13.21% of 2-10:40:00 core-walltime
+Job Wall-clock time: 00:27:30
+Memory Utilized: 10.13 GB
+Memory Efficiency: 4.52% of 224.00 GB

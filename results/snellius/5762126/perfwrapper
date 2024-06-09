@@ -1,0 +1,2 @@
+#!/bin/bash
+perf stat -e ${events} -o perf.data.${group}.$SLURM_JOB_ID.$SLURM_PROCID $@

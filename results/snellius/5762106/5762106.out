@@ -1,0 +1,315 @@
+/gpfs/home3/jvandijk/showcees-framework/tmp.CKxvf9gb2y
+perfwrapper
+config-relative.xml
+RBC.xml
+RBC.pos
+PLT.pos
+PLT.xml
+filter.filter
+/home/jvandijk/HemoCell-dev-no-scorep/Hemocell-Performance-Benchmarks/cube-benchmark/cube-benchmark
+(HemoCell) (Config) reading config-relative.xml
+ _   _   ____   __  __   _____    ___   ____   __     __ 
+( )_( ) ( ___) (  \/  ) (  _  )  / __) ( ___) (  )   (  )
+ ) _ (   )__)   )    (   )(_)(  ( (__   )__)   )(__   )(__ 
+(_) (_) (____) (_/\/\_) (_____)  \___) (____) (____) (____) 
+                         v.2.6
+
+(unbounded) (Parameters) calculating flow parameters
+(HemoCell) dt is set to *auto*. Tau will be set to 1!
+(HemoCell) System parameters:
+	 dx: 	5e-07
+	 dt: 	3.78788e-08
+	 dm: 	1.28125e-16
+	 dN: 	4.4649e-08
+	 tau: 	1
+	 nu_lbm: 	0.166667
+	 u_lb_max: 	7.57576e-07
+	 f_limit: 	0.00111985
+(unbounded) (Fluid) Initializing Palabos Fluid Field
+(HemoCell) Using default domain management.
+(HemoCell) (Fluid) Setting Fluid Equilibrium
+Size of the multi-block:     200-by-100-by-100
+Number of atomic-blocks:     128
+Smallest atomic-block:       25-by-25-by-25
+Largest atomic-block:        25-by-25-by-25
+Number of allocated cells:   2 million
+Fraction of allocated domain: 100 percent
+
+(Hemocell) (HemoCellFields) (Init) particle envelope: 25 [lu]
+Cellfield  (+ material model) of RBC
+  Volume :90 µm³ VolumeFraction of lsp per fluid node: 1.1215 %
+  Nvertex: 642
+(Cell-mechanics model) High Order model parameters for RBC cellfield
+	 k_link:   0.000183679
+	 k_area:   9.18393e-07
+	 k_bend: : 1.46943e-05
+	 k_volume: 3.67357e-06
+	 eta_m:    0
+	 mean_edge:1.00019
+	 N faces:  1280
+(HemoCell) (Timescale Seperation) Setting seperation of RBC to 20 timesteps
+(HemoCell) (Timescale separation) Setting update separation of all particles to 5 timesteps
+(HemoCell) (CellField) Setting output variables for RBC cells
+(HemoCell) (Fluid) Setting output variables for fluid field
+(HemoCell) (CellField) Loading particle positions 
+(readPositionsBloodCells) Reading particle positions...
+(readPositionsBloodCells) Particle count in file (RBC): 128000.
+(unbounded) fresh start: warming up cell-free fluid domain for 0 iterations...
+(unbounded) Starting simulation...
+ | RBC Volume ratio [x100%]: 1.925
+(main)   nCells (global) = 500
+(HemoCell) (SanityCheck) Performing Sanity check on simulation parameters and setup
+(HemoCell) WARNING: Force limit active at 50 pN. Results can be inaccurate due to force capping.
+Hemocell Profiler Statistics (Only Process 0):
+HemoCell: 265.085000
+ MpiReceive: 0.000000
+ MpiSend: 0.000000
+ deleteIncompleteCells: 0.002000
+ iterate: 264.228000
+  advanceParticles: 6.917000
+  applyConstitutiveModel: 3.099000
+  collideAndStream: 178.947000
+  deleteNonLocalParticles: 0.467000
+  interpolateFluidVelocity: 4.012000
+  setExternalVector: 6.205000
+  spreadParticleForce: 28.393000
+  syncEnvelopes: 36.068000
+   MpiReceive: 3.107000
+   MpiSend: 0.552000
+ syncEnvelopes: 0.165000
+  MpiReceive: 0.004000
+  MpiSend: 0.001000
+(main) Simulation finished :) 
+(HemoCell) (Config) reading config-relative.xml
+ _   _   ____   __  __   _____    ___   ____   __     __ 
+( )_( ) ( ___) (  \/  ) (  _  )  / __) ( ___) (  )   (  )
+ ) _ (   )__)   )    (   )(_)(  ( (__   )__)   )(__   )(__ 
+(_) (_) (____) (_/\/\_) (_____)  \___) (____) (____) (____) 
+                         v.2.6
+
+(unbounded) (Parameters) calculating flow parameters
+(HemoCell) dt is set to *auto*. Tau will be set to 1!
+(HemoCell) System parameters:
+	 dx: 	5e-07
+	 dt: 	3.78788e-08
+	 dm: 	1.28125e-16
+	 dN: 	4.4649e-08
+	 tau: 	1
+	 nu_lbm: 	0.166667
+	 u_lb_max: 	7.57576e-07
+	 f_limit: 	0.00111985
+(unbounded) (Fluid) Initializing Palabos Fluid Field
+(HemoCell) Using default domain management.
+(HemoCell) (Fluid) Setting Fluid Equilibrium
+Size of the multi-block:     200-by-100-by-100
+Number of atomic-blocks:     128
+Smallest atomic-block:       25-by-25-by-25
+Largest atomic-block:        25-by-25-by-25
+Number of allocated cells:   2 million
+Fraction of allocated domain: 100 percent
+
+(Hemocell) (HemoCellFields) (Init) particle envelope: 25 [lu]
+Cellfield  (+ material model) of RBC
+  Volume :90 µm³ VolumeFraction of lsp per fluid node: 1.1215 %
+  Nvertex: 642
+(Cell-mechanics model) High Order model parameters for RBC cellfield
+	 k_link:   0.000183679
+	 k_area:   9.18393e-07
+	 k_bend: : 1.46943e-05
+	 k_volume: 3.67357e-06
+	 eta_m:    0
+	 mean_edge:1.00019
+	 N faces:  1280
+(HemoCell) (Timescale Seperation) Setting seperation of RBC to 20 timesteps
+(HemoCell) (Timescale separation) Setting update separation of all particles to 5 timesteps
+(HemoCell) (CellField) Setting output variables for RBC cells
+(HemoCell) (Fluid) Setting output variables for fluid field
+(HemoCell) (CellField) Loading particle positions 
+(readPositionsBloodCells) Reading particle positions...
+(readPositionsBloodCells) Particle count in file (RBC): 128000.
+(unbounded) fresh start: warming up cell-free fluid domain for 0 iterations...
+(unbounded) Starting simulation...
+ | RBC Volume ratio [x100%]: 1.925
+(main)   nCells (global) = 500
+(HemoCell) (SanityCheck) Performing Sanity check on simulation parameters and setup
+(HemoCell) WARNING: Force limit active at 50 pN. Results can be inaccurate due to force capping.
+Hemocell Profiler Statistics (Only Process 0):
+HemoCell: 266.887000
+ MpiReceive: 0.000000
+ MpiSend: 0.000000
+ deleteIncompleteCells: 0.002000
+ iterate: 266.114000
+  advanceParticles: 6.258000
+  applyConstitutiveModel: 2.998000
+  collideAndStream: 183.069000
+  deleteNonLocalParticles: 0.492000
+  interpolateFluidVelocity: 3.492000
+  setExternalVector: 4.179000
+  spreadParticleForce: 25.736000
+  syncEnvelopes: 39.780000
+   MpiReceive: 3.120000
+   MpiSend: 0.530000
+ syncEnvelopes: 0.162000
+  MpiReceive: 0.005000
+  MpiSend: 0.001000
+(main) Simulation finished :) 
+(HemoCell) (Config) reading config-relative.xml
+ _   _   ____   __  __   _____    ___   ____   __     __ 
+( )_( ) ( ___) (  \/  ) (  _  )  / __) ( ___) (  )   (  )
+ ) _ (   )__)   )    (   )(_)(  ( (__   )__)   )(__   )(__ 
+(_) (_) (____) (_/\/\_) (_____)  \___) (____) (____) (____) 
+                         v.2.6
+
+(unbounded) (Parameters) calculating flow parameters
+(HemoCell) dt is set to *auto*. Tau will be set to 1!
+(HemoCell) System parameters:
+	 dx: 	5e-07
+	 dt: 	3.78788e-08
+	 dm: 	1.28125e-16
+	 dN: 	4.4649e-08
+	 tau: 	1
+	 nu_lbm: 	0.166667
+	 u_lb_max: 	7.57576e-07
+	 f_limit: 	0.00111985
+(unbounded) (Fluid) Initializing Palabos Fluid Field
+(HemoCell) Using default domain management.
+(HemoCell) (Fluid) Setting Fluid Equilibrium
+Size of the multi-block:     200-by-100-by-100
+Number of atomic-blocks:     128
+Smallest atomic-block:       25-by-25-by-25
+Largest atomic-block:        25-by-25-by-25
+Number of allocated cells:   2 million
+Fraction of allocated domain: 100 percent
+
+(Hemocell) (HemoCellFields) (Init) particle envelope: 25 [lu]
+Cellfield  (+ material model) of RBC
+  Volume :90 µm³ VolumeFraction of lsp per fluid node: 1.1215 %
+  Nvertex: 642
+(Cell-mechanics model) High Order model parameters for RBC cellfield
+	 k_link:   0.000183679
+	 k_area:   9.18393e-07
+	 k_bend: : 1.46943e-05
+	 k_volume: 3.67357e-06
+	 eta_m:    0
+	 mean_edge:1.00019
+	 N faces:  1280
+(HemoCell) (Timescale Seperation) Setting seperation of RBC to 20 timesteps
+(HemoCell) (Timescale separation) Setting update separation of all particles to 5 timesteps
+(HemoCell) (CellField) Setting output variables for RBC cells
+(HemoCell) (Fluid) Setting output variables for fluid field
+(HemoCell) (CellField) Loading particle positions 
+(readPositionsBloodCells) Reading particle positions...
+(readPositionsBloodCells) Particle count in file (RBC): 128000.
+(unbounded) fresh start: warming up cell-free fluid domain for 0 iterations...
+(unbounded) Starting simulation...
+ | RBC Volume ratio [x100%]: 1.925
+(main)   nCells (global) = 500
+(HemoCell) (SanityCheck) Performing Sanity check on simulation parameters and setup
+(HemoCell) WARNING: Force limit active at 50 pN. Results can be inaccurate due to force capping.
+Hemocell Profiler Statistics (Only Process 0):
+HemoCell: 265.122000
+ MpiReceive: 0.000000
+ MpiSend: 0.000000
+ deleteIncompleteCells: 0.002000
+ iterate: 264.343000
+  advanceParticles: 8.101000
+  applyConstitutiveModel: 3.168000
+  collideAndStream: 183.599000
+  deleteNonLocalParticles: 0.494000
+  interpolateFluidVelocity: 5.713000
+  setExternalVector: 14.865000
+  spreadParticleForce: 21.263000
+  syncEnvelopes: 27.024000
+   MpiReceive: 2.514000
+   MpiSend: 0.582000
+ syncEnvelopes: 0.144000
+  MpiReceive: 0.004000
+  MpiSend: 0.001000
+(main) Simulation finished :) 
+(HemoCell) (Config) reading config-relative.xml
+ _   _   ____   __  __   _____    ___   ____   __     __ 
+( )_( ) ( ___) (  \/  ) (  _  )  / __) ( ___) (  )   (  )
+ ) _ (   )__)   )    (   )(_)(  ( (__   )__)   )(__   )(__ 
+(_) (_) (____) (_/\/\_) (_____)  \___) (____) (____) (____) 
+                         v.2.6
+
+(unbounded) (Parameters) calculating flow parameters
+(HemoCell) dt is set to *auto*. Tau will be set to 1!
+(HemoCell) System parameters:
+	 dx: 	5e-07
+	 dt: 	3.78788e-08
+	 dm: 	1.28125e-16
+	 dN: 	4.4649e-08
+	 tau: 	1
+	 nu_lbm: 	0.166667
+	 u_lb_max: 	7.57576e-07
+	 f_limit: 	0.00111985
+(unbounded) (Fluid) Initializing Palabos Fluid Field
+(HemoCell) Using default domain management.
+(HemoCell) (Fluid) Setting Fluid Equilibrium
+Size of the multi-block:     200-by-100-by-100
+Number of atomic-blocks:     128
+Smallest atomic-block:       25-by-25-by-25
+Largest atomic-block:        25-by-25-by-25
+Number of allocated cells:   2 million
+Fraction of allocated domain: 100 percent
+
+(Hemocell) (HemoCellFields) (Init) particle envelope: 25 [lu]
+Cellfield  (+ material model) of RBC
+  Volume :90 µm³ VolumeFraction of lsp per fluid node: 1.1215 %
+  Nvertex: 642
+(Cell-mechanics model) High Order model parameters for RBC cellfield
+	 k_link:   0.000183679
+	 k_area:   9.18393e-07
+	 k_bend: : 1.46943e-05
+	 k_volume: 3.67357e-06
+	 eta_m:    0
+	 mean_edge:1.00019
+	 N faces:  1280
+(HemoCell) (Timescale Seperation) Setting seperation of RBC to 20 timesteps
+(HemoCell) (Timescale separation) Setting update separation of all particles to 5 timesteps
+(HemoCell) (CellField) Setting output variables for RBC cells
+(HemoCell) (Fluid) Setting output variables for fluid field
+(HemoCell) (CellField) Loading particle positions 
+(readPositionsBloodCells) Reading particle positions...
+(readPositionsBloodCells) Particle count in file (RBC): 128000.
+(unbounded) fresh start: warming up cell-free fluid domain for 0 iterations...
+(unbounded) Starting simulation...
+ | RBC Volume ratio [x100%]: 1.925
+(main)   nCells (global) = 500
+(HemoCell) (SanityCheck) Performing Sanity check on simulation parameters and setup
+(HemoCell) WARNING: Force limit active at 50 pN. Results can be inaccurate due to force capping.
+Hemocell Profiler Statistics (Only Process 0):
+HemoCell: 259.550000
+ MpiReceive: 0.000000
+ MpiSend: 0.000000
+ deleteIncompleteCells: 0.002000
+ iterate: 258.771000
+  advanceParticles: 7.044000
+  applyConstitutiveModel: 3.140000
+  collideAndStream: 186.690000
+  deleteNonLocalParticles: 0.525000
+  interpolateFluidVelocity: 4.393000
+  setExternalVector: 5.451000
+  spreadParticleForce: 19.077000
+  syncEnvelopes: 32.324000
+   MpiReceive: 2.789000
+   MpiSend: 0.566000
+ syncEnvelopes: 0.153000
+  MpiReceive: 0.005000
+  MpiSend: 0.000000
+(main) Simulation finished :) 
+
+JOB STATISTICS
+==============
+Job ID: 5762106
+Cluster: snellius
+User/Group: jvandijk/jvandijk
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 128
+CPU Utilized: 1-16:35:36
+CPU Efficiency: 79.17% of 2-03:16:16 core-walltime
+Job Wall-clock time: 00:24:02
+Memory Utilized: 18.27 GB (estimated maximum)
+Memory Efficiency: 8.16% of 224.00 GB (1.75 GB/core)
