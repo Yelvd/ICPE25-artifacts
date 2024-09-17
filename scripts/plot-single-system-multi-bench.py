@@ -25,9 +25,11 @@ def plot_energy():
     df = df.loc[df['platform'] == platform]
     df = df.loc[df['tasks'] == misc.platform_cores[platform] ]
     df = df.loc[df['benchmark'].isin(["S1", "S2", "W1"])]
+    df.loc[df['benchmark'] == "S1",'iterate-energy'] = df.loc[df['benchmark'] == "S1"]['iterate-energy'] / 20000 
+    df.loc[df['benchmark'] == "S2",'iterate-energy'] = df.loc[df['benchmark'] == "S2"]['iterate-energy'] / 10000 
+    df.loc[df['benchmark'] == "W1",'iterate-energy'] = df.loc[df['benchmark'] == "W1"]['iterate-energy'] / 20000 
     df = df.groupby(["platform", "benchmark"], as_index=False).agg({"iterate-energy": ['mean', 'std', 'min', 'max']}).rename({"iterate-energy": "energy"}, axis=1)
     df = df.sort_values(by=["benchmark"])
-    df['energy'] = df['energy'] / 1000
     df = df.round(0)
 
 
@@ -43,11 +45,10 @@ def plot_energy():
         ax.bar_label(rects, padding=3)
 
     # Add some text for labels, title and custom x-axis tick labels, etc.
-    ax.set_ylabel('Energy (kJ)')
-    ax.set_xlabel('Benchmark')
+    ax.set_ylabel('Energy [J/ITER.]')
 
     ax.set_xticks(x, df['benchmark'])
-    ax.set_ylim(0, 1200)
+    ax.set_ylim(0, 50)
 
 
 def plot_power():
@@ -69,20 +70,26 @@ def plot_power():
         rects = ax.bar(index, line["power"]["mean"], 
                         width, color=color, yerr=line["power"]["std"], label="{}".format(line['benchmark']))
 
-        ax.bar_label(rects, padding=3)
+        padding = 2
+        if index == 1:
+            padding = 10
+
+        ax.bar_label(rects, padding=padding)
 
     # Add some text for labels, title and custom x-axis tick labels, etc.
-    ax.set_ylabel('Avg power (W)')
-    ax.set_xlabel('Benchmark')
+    ax.set_ylabel('Power [W]')
 
     ax.set_xticks(x, df['benchmark'])
-    ax.set_ylim(0, 1100)
+    ax.set_ylim(0, 1500)
 
 def plot_time():
     df = internal.load_time(results_dir)
     df = df.loc[df['platform'] == platform]
     df = df.loc[df['tasks'] == misc.platform_cores[platform] ]
     df = df.loc[df['benchmark'].isin(["S1", "S2", "W1"])]
+    df.loc[df['benchmark'] == "S1",'iterate'] = df.loc[df['benchmark'] == "S1"]['iterate'] / 20000 * 1000
+    df.loc[df['benchmark'] == "S2",'iterate'] = df.loc[df['benchmark'] == "S2"]['iterate'] / 10000 * 1000
+    df.loc[df['benchmark'] == "W1",'iterate'] = df.loc[df['benchmark'] == "W1"]['iterate'] / 20000 * 1000
     df = df.groupby(["platform", "benchmark"], as_index=False).agg({"iterate": ['mean', 'std']})
     df = df.sort_values(by=["benchmark"])
     df = df.round(0)
@@ -100,15 +107,14 @@ def plot_time():
         ax.bar_label(rects, padding=3)
 
     # Add some text for labels, title and custom x-axis tick labels, etc.
-    ax.set_ylabel('Time (s)')
-    ax.set_xlabel('Benchmark')
+    ax.set_ylabel('Time [ms/ITER.]')
 
     ax.set_xticks(x, df['benchmark'])
-    ax.set_ylim(0, 2900)
+    ax.set_ylim(0, 50)
 
 
 figsize = plt.rcParams['figure.figsize']
-figsize = (figsize[0] / 2, figsize[0] / 2)
+figsize = (figsize[0] / 3, figsize[0] / 3)
 
 fig, ax = plt.subplots(figsize=figsize, layout='constrained')
 

@@ -31,7 +31,6 @@ def load_time(results_dir, experiment=None):
 
     df = pd.concat(data)
 
-    print(df)
     if experiment is not None:
         df = df.loc[df["benchmark"] == experiment]
         # match experiment:
@@ -41,7 +40,6 @@ def load_time(results_dir, experiment=None):
                 # df = df.loc[df["benchmark"].isin(["fixed-large", "cube-fixed-large"])]
             # case "relative":
                 # df = df.loc[df["benchmark"].isin(["relative", "cube-relative"])]
-    print(df)
 
     return df 
 

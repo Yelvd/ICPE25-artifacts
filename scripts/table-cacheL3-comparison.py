@@ -22,7 +22,6 @@ intel_metrics = ["instructions", "LLC-loads ", "LLC-stores ", "LLC-load-misses "
 metrics = {"Intel SPR DDR": intel_metrics, "Intel SPR HBM": intel_metrics, "Ampere Altra": arm_metrics}
 
 df = profile.load_profile(results_dir, metrics, exp, "perf")
-print(df)
 df = df.loc[(df['benchmark'].isin(["S1", "S2", "W1"]))]
 
 df = df.sort_values(by=['platform', 'tasks', 'benchmark'])
@@ -32,7 +31,6 @@ df['metric'] = [translate[m.strip()] for m in df['metric']]
 new_df = []
 
 df['unique'] = [f"{r['benchmark']}-{r['platform']}-{r['id']}" for _, r in df.iterrows()]
-print(df)
 
 new_columns = ["benchmark", "platform", "tasks", names["LLC_accesses"], names["LLC_misses"], "miss-rate"]
 for job in np.unique(df['unique']):
@@ -97,8 +95,6 @@ if exp:
 else:
     column_format = "lrlrrrr"
 
-print(new_df)
 latex_str = new_df.style.hide().to_latex(hrules=True, column_format='lrrrr')
-print(latex_str)
 with open(snakemake.output["tex"], "w") as file1:
     file1.write(latex_str)

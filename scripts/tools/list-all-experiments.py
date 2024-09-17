@@ -9,7 +9,7 @@ from os.path import isfile, join
 from os import walk
 import re
 
-results_dir = "./extrapolation-results/"
+results_dir = "./results/"
 
 
 w = walk(results_dir)

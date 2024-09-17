@@ -35,7 +35,6 @@ df['metric'] = [translate[m.strip()] for m in df['metric']]
 new_df = []
 
 df['unique'] = [f"{r['benchmark']}-{r['platform']}-{r['id']}" for _, r in df.iterrows()]
-print(df)
 
 new_columns = ["benchmark", "platform", "tasks", names["l1_accesses"], names["l1_misses"], "miss-rate"]
 for job in np.unique(df['unique']):
@@ -97,8 +96,6 @@ if exp:
 else:
     column_format = "lrlrrrr"
 
-print(new_df)
 latex_str = new_df.style.hide().to_latex(hrules=True, column_format='lrrrr')
-print(latex_str)
 with open(snakemake.output["tex"], "w") as file1:
     file1.write(latex_str)

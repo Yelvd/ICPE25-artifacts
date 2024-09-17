@@ -76,7 +76,6 @@ for job in np.unique(df['unique']):
     new_df.append([benchmark, platform, tasks, t, i, c, cpi, dpi])
 
 new_df = pd.DataFrame(new_df, columns=new_columns)
-print(new_df)
 new_df = new_df.groupby(['Platform', 'Processes', "Benchmark"]).mean()
 
 if exp:
@@ -107,7 +106,6 @@ for p in new_df['Platform']:
 
 new_df['Platform'] = new_platform
 
-print(new_df)
 latex_str = new_df.style.format().hide(axis="index").to_latex(hrules=True, column_format='lrrrrr')
 with open(snakemake.output["tex"], "w") as file1:
     file1.write(latex_str)

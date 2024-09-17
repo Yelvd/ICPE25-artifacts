@@ -13,29 +13,21 @@ PLATFORMS = ['AMD Bergamo', 'Ampere Altra', 'Intel SPR DDR', 'Intel SPR HBM', "A
 EXPERIMENTS = ["S1", "S2", "W1"]
 METRICS = ["time", "power", "energy"]
 
-MASCOTS24_FIGURES = ["S1-time-all.pdf", "S1-energy-all.pdf", "S1-power-all.pdf", "S1-time-AMD_Bergamo.pdf"]
-MASCOTS24_FIGURES = MASCOTS24_FIGURES + [f"S1-time-{p.replace(' ','_')}.pdf" for p in PLATFORMS]
-MASCOTS24_FIGURES = MASCOTS24_FIGURES + [f"S1-energy-{p.replace(' ','_')}.pdf" for p in PLATFORMS]
-MASCOTS24_TABLES  = ["S1-CPI-all.tex", "S1-cache-all.tex", "S1-mem-all.tex"]
+ICPE25_FIGURES = ["S1-all.pdf", "S1-time-all.pdf", "S1-energy-all.pdf", "roofline_S1_AMD_Genoa.pdf", "roofline_S2_AMD_Genoa.pdf", "all-energy-AMD_Genoa.pdf", "all-time-AMD_Genoa.pdf", "all-power-AMD_Genoa.pdf"]
+ICPE25_TABLES  = ["S1-CPI-all.tex", "S1-cache-all.tex", "S1-mem-all.tex"]
 
-MASCOTS24_ARTIFECTS = MASCOTS24_FIGURES + MASCOTS24_TABLES
+ICPE25_ARTIFECTS = ICPE25_FIGURES + ICPE25_TABLES
  
-rule all:
+rule ICPE25:
     input:
-        [f"{figsDir}/{e}-{m}-{p.replace(' ', '_')}.pdf"  for p in PLATFORMS for e in EXPERIMENTS for m in METRICS],
-        [f"{figsDir}/{e}-{m}-all.pdf" for e in EXPERIMENTS for m in METRICS],
-
-
-rule MASCOTS24:
-    input:
-        [f"{figsDir}/{artifect}" for artifect in MASCOTS24_ARTIFECTS]
+        [f"{figsDir}/{artifect}" for artifect in ICPE25_ARTIFECTS]
 
 
 rule plot_roofline:
     input:
         "scripts/plot-roofline.py"
     params:
-        resultsDir = "./backup/results-components/",
+        resultsDir = f"{resultsDir_}",
         matplotlibStyle = matplotlibStyle_,
         platform = "AMD Genoa",
     output:
@@ -82,24 +74,42 @@ for platform in PLATFORMS:
                 script:
                     "scripts/plot-single-system.py"
 
+
+
     
 
 for experiment in EXPERIMENTS:
     for metric in METRICS:
         rule:
-            name: f"plot-{experiment}-{metric}-all"
+            name: f"plot-{experiment}-all"
             input:
                 "scripts/plot-all-systems.py"
             params:
                 resultsDir = resultsDir_,
                 matplotlibStyle = matplotlibStyle_,
                 experiment = experiment,
-                metric = metric
             output:
-                pdf = f"{figsDir}/{experiment}-{metric}-all.pdf",
-                png = f"{figsDir}/{experiment}-{metric}-all.png"
+                pdf = f"{figsDir}/{experiment}-all.pdf",
+                png = f"{figsDir}/{experiment}-all.png"
             script:
                 "scripts/plot-all-systems.py"
+
+        for experiment in EXPERIMENTS:
+            rule:
+                name: f"plot-{experiment}-{metric}-all"
+                input:
+                    "scripts/plot-single-system.py"
+                params:
+                    resultsDir = resultsDir_,
+                    matplotlibStyle = matplotlibStyle_,
+                    experiment = experiment,
+                    platform = "all",
+                    metric = metric
+                output:
+                    pdf = f"{figsDir}/{experiment}-{metric}-all.pdf",
+                    png = f"{figsDir}/{experiment}-{metric}-all.png"
+                script:
+                    "scripts/plot-single-system.py"
 
 for experiment in EXPERIMENTS + ['all']:
     for platform in PLATFORMS + ['all']:
@@ -172,7 +182,7 @@ for experiment in EXPERIMENTS + ['all']:
         rule:
             name: f"table-{experiment}-mem-{platform.replace(' ', '_')}"
             input:
-                "scripts/table-cache-comparison.py"
+                "scripts/table-mem-comparison.py"
             params:
                 resultsDir = resultsDir_,
                 experiment = experiment,

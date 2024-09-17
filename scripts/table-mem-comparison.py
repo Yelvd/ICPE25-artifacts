@@ -106,7 +106,5 @@ for p in new_df['platform']:
 new_df['platform'] = new_platform
 
 latex_str = new_df.style.hide().to_latex(hrules=True, column_format='lrrrr')
-print(new_df)
-print(latex_str)
-# with open(snakemake.output["tex"], "w") as file1:
-    # file1.write(latex_str)
+with open(snakemake.output["tex"], "w") as file1:
+    file1.write(latex_str)

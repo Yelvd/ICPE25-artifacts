@@ -28,7 +28,7 @@ translate = misc.translate_hw_events
 
 roofline_metrics = ["RETIRED_SSE_AVX_FLOPS_ALL |"]
 metrics = {"rome-likwid": roofline_metrics}
-df = profile.load_profile(results_dir, metrics, None, "likwid")
+df = profile.load_profile(f"{results_dir}/results-components", metrics, None, "likwid")
 df = df.sort_values(by=['platform', 'tasks', 'benchmark'])
 df['unique'] = [f"{r['benchmark']}-{r['platform']}-{r['id']}-{r['tasks']}" for _, r in df.iterrows()]
 
@@ -36,18 +36,19 @@ df_score = scorep.load_scorep(results_dir, None)
 df_score = df_score.loc[df_score["region"].isin(["fluid", "particle", "couple"])]
 
 df_score = df_score.sort_values(by=['platform', 'tasks', 'benchmark'])
-f = scorep.load_scorep("./results-components/")
+f = scorep.load_scorep(results_dir)
 df_score.loc[df_score["region"].isin(["fluid", "particle", "couple"])]
 df_score['metric'] = [translate[m.strip()] for m in df_score['metric']]
 
 platform = "AMD Genoa"
-df_time = internal.load_time("./results")
+df_time = internal.load_time(results_dir)
 df_time = df_time.loc[df_time['tasks'] == misc.platform_cores[platform] ]
 df_time = df_time.loc[df_time['benchmark'].isin(["S1", "S2", "W1"])]
 df_time = df_time.groupby(["platform", "benchmark"], as_index=False).agg({"iterate": ['mean', 'std']})
 df_time = df_time.sort_values(by=["benchmark"])
 df_time = df_time.round(0)
 
+linestyles = ["-", "--", "-.", ":"]
 
 
 df_score['unique'] = [f"{r['benchmark']}-{r['platform']}-{r['id']}" for _, r in df_score.iterrows()]
@@ -62,7 +63,6 @@ def plot_roofline(name, bandwidth, flops, points):
 
     plt.style.use('./matplotlib-style.rc')
     color_cycle = matplotlib.pyplot.rcParams['axes.prop_cycle'].by_key()['color']
-    linestyles = ['-', ':']
 
 
     for i, f in enumerate(flops.keys()):
@@ -75,7 +75,7 @@ def plot_roofline(name, bandwidth, flops, points):
     for i, b in enumerate(bandwidth.keys()):
         bw = bandwidth[b]
         flopIntersect = peakFlops / bw
-        plt.plot([0, flopIntersect], [0, bw * flopIntersect], linestyles[1], linewidth=linewidth,color=color_cycle[i + iOffset], label="{}: {} GB/s".format(b, bw))
+        plt.plot([0, flopIntersect], [0, bw * flopIntersect], linestyles[i], linewidth=linewidth,color=color_cycle[1], label="{}: {} GB/s".format(b, bw))
 
     
     iOffset = len(flops.keys()) + len(bandwidth.keys())
@@ -84,9 +84,8 @@ def plot_roofline(name, bandwidth, flops, points):
     for i, p in enumerate(points.keys()):
         marker='x' if "fluid" in p else '+'
         
-        tmp = 9 if "L1" in p else 7
-        color = color_cycle[tmp]
-        plt.plot(points[p][0], points[p][1], color=color, marker=marker, linestyle='None', markersize=5, label="{}: {:.2f} FLOP/Byte".format(p, points[p][0]))
+        tmp = 3 if "L1" in p else 4
+        plt.plot(points[p][0], points[p][1], color=color_cycle[tmp], marker=marker, linestyle='None', markersize=5, label="{}: {:.2f} FLOP/Byte".format(p, points[p][0]))
 
 
     ax=plt.gca()
@@ -100,7 +99,7 @@ def plot_roofline(name, bandwidth, flops, points):
     plt.xticks([0.01, 0.1, 1, 10])
     plt.yticks([10, 100, 1000, 10000])
     ax.legend(loc='upper center', bbox_to_anchor=(0.5, 1.50),
-          ncol=2, fancybox=True, shadow=True)
+          ncol=2, fancybox=True)
     ax.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
     ax.get_yaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
     ax.xaxis.set_major_formatter(FormatStrFormatter('%.1g'))

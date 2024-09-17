@@ -96,6 +96,8 @@ def load_scorep(results_dir, experiment=None):
         with open(f"{dirpath}/meta.yaml") as f:
             meta = yaml.load(f, Loader=yaml.FullLoader)
 
+        if meta["General"].get("Monitor-tool") is None:
+            continue
 
         if meta["General"]["Monitor-tool"] == "scorep":
             data.append(load_experiment(dirpath))
