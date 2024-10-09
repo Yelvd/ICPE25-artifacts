@@ -1,4 +1,4 @@
-Data and Scripts used to generate all the figures and tables for the ICPE25 paper
+Data and Scripts used to generate all the figures and tables for my ICPE25 paper
 
 # Content
 This repository contains:
