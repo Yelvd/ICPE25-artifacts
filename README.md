@@ -1,4 +1,4 @@
-Data and Scripts used to generate all the figures and tables for the ICPE25 paper "Evaluating Performance and Energy Efficiency of Emerging HPC Processors for a Coupled Scientific Simulation"
+Data and Scripts used to generate all the figures and tables for the ICPE25 paper
 
 # Content
 This repository contains:
