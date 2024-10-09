@@ -10,11 +10,11 @@ matplotlibStyle_ = "matplotlib-style.rc"
 resultsDir_ = "results/"
 
 PLATFORMS = ['AMD Bergamo', 'Ampere Altra', 'Intel SPR DDR', 'Intel SPR HBM', "AMD Rome 7742", "AMD Genoa", "AMD Rome 7H12"]
-EXPERIMENTS = ["S1", "S2", "W1"]
+EXPERIMENTS = ["S1", "S2"]
 METRICS = ["time", "power", "energy"]
 
-ICPE25_FIGURES = ["S1-all.pdf", "S1-time-all.pdf", "S1-energy-all.pdf", "roofline_S1_AMD_Genoa.pdf", "roofline_S2_AMD_Genoa.pdf", "all-energy-AMD_Genoa.pdf", "all-time-AMD_Genoa.pdf", "all-power-AMD_Genoa.pdf"]
-ICPE25_TABLES  = ["S1-CPI-all.tex", "S1-cache-all.tex", "S1-mem-all.tex"]
+ICPE25_FIGURES = ["S1-all.pdf", "S1-time-all.pdf", "S1-energy-all.pdf", "roofline_S1_AMD_Genoa.pdf"]
+ICPE25_TABLES  = ["S1-CPI-all.tex", "all-cache-all.tex", "S1-cacheL3-all.tex", "S1-cache-all.tex", "all-mem-all.tex"]
 
 ICPE25_ARTIFECTS = ICPE25_FIGURES + ICPE25_TABLES
  

@@ -47,7 +47,6 @@ for job in np.unique(df['unique']):
         ca = ca + tmp_df.loc[tmp_df['metric'] == names['LLC_store_accesses']]['sum'].values[0] / scaling
         cr = tmp_df.loc[tmp_df['metric'] == names['LLC_load_misses']]['sum'].values[0] / scaling
         cr = cr + tmp_df.loc[tmp_df['metric'] == names['LLC_store_misses']]['sum'].values[0] / scaling
-    print(ca)
 
     si = (cr * scaling)*64 * 10**-9
     miss_rate = cr / ca 
@@ -88,13 +87,20 @@ for p in new_df['platform']:
 
 new_df['platform'] = new_platform
 # new_df = new_df.drop(names['instructions'], axis=1)
-
-
-if exp:
-    column_format = "lrrrrr"
-else:
-    column_format = "lrlrrrr"
-
 latex_str = new_df.style.hide().to_latex(hrules=True, column_format='lrrrr')
+
+latex_str = latex_str.split("\midrule")
+latex_str[0] = r"""
+\begin{minipage}{\columnwidth}
+        \renewcommand\footnoterule{}
+        \renewcommand{\thefootnote}{\alph{footnote}}
+\centering
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Platform & NP & \makecell[r]{\# LLC req.\\$\times 10^{12}$} & \makecell[r]{\# LLC misses \\ $\times 10^{12}$} & MR \\
+"""
+latex_str = "\n\midrule\n".join(latex_str)
+latex_str += r"""\end{minipage}"""
+
 with open(snakemake.output["tex"], "w") as file1:
     file1.write(latex_str)

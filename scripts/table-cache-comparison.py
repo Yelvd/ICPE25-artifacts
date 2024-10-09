@@ -91,11 +91,24 @@ new_df['platform'] = new_platform
 # new_df = new_df.drop(names['instructions'], axis=1)
 
 
-if exp:
-    column_format = "lrrrrr"
-else:
-    column_format = "lrlrrrr"
-
 latex_str = new_df.style.hide().to_latex(hrules=True, column_format='lrrrr')
+
+latex_str = latex_str.split("\midrule")
+latex_str[0] = r"""
+\begin{minipage}{\columnwidth}
+        \renewcommand\footnoterule{}
+        \renewcommand{\thefootnote}{\alph{footnote}}
+\centering
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Platform & NP & \makecell[r]{\# L1 req.\\$\times 10^{12}$} & \makecell[r]{\# L1 misses \\ $\times 10^{12}$} & MR \\
+"""
+latex_str = "\n\midrule\n".join(latex_str)
+latex_str += r"""\footnotetext[1]{For the \textit{Intel SRP} processor we can only measure the L1 loads.}
+\end{minipage}"""
+
+latex_str = latex_str.replace("*", r"\footnotemark[1]")
+
+
 with open(snakemake.output["tex"], "w") as file1:
     file1.write(latex_str)

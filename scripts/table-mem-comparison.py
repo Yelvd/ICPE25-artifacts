@@ -28,7 +28,7 @@ intel_metrics = ["instructions", "LLC-load-misses", "LLC-store-misses"]
 metrics = {"Intel SPR DDR": intel_metrics, "Intel SPR HBM": intel_metrics, "Ampere Altra": arm_metrics}
 
 df = profile.load_profile(results_dir, metrics, exp, "perf")
-
+df = df.loc[df['benchmark'].isin(['S1', 'S2'])]
 df = df.sort_values(by=['platform', 'tasks', 'benchmark'])
 df['metric'] = [translate[m] for m in df['metric']]
 
@@ -105,6 +105,28 @@ for p in new_df['platform']:
 
 new_df['platform'] = new_platform
 
+np = ""
+new_np = []
+for p in new_df['tasks']:
+    if np == p:
+        new_np.append(" ")
+    else:
+        np = p
+        new_np.append(p)
+
+new_df['tasks'] = new_np
+
+new_df.reset_index(drop=True, inplace=True)
+
 latex_str = new_df.style.hide().to_latex(hrules=True, column_format='lrrrr')
+
+latex_str = latex_str.split("\midrule")
+latex_str[0] = r"""
+\begin{tabular}{@{}llrrrr@{}}
+\toprule
+Platform & NP & B & \makecell[r]{Time \\ {[\SI{}{\second}]}} & \makecell[r]{Data \\{[\SI{}{\giga\byte}]}} & \makecell[r]{Bandwidth \\ {[\SI{}{\giga\byte/\second]}}} \\
+"""
+latex_str = "\n\midrule\n".join(latex_str)
+
 with open(snakemake.output["tex"], "w") as file1:
     file1.write(latex_str)

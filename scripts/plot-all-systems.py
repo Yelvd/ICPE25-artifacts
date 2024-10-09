@@ -121,7 +121,7 @@ def plot_time(ax):
 
 
 figsize = plt.rcParams['figure.figsize']
-figsize = (figsize[0], figsize[0] + 0.5)
+figsize = (figsize[0], figsize[1] + 0.5)
 
 fig, ax = plt.subplots(3, figsize=figsize, layout='constrained', sharex=True)
 # fig, ax = plt.subplots(figsize=figsize, layout='constrained')

@@ -30,10 +30,11 @@ df = profile.load_profile(results_dir, metrics, exp, "perf")
 df = df.sort_values(by=['platform', 'tasks', 'benchmark'])
 df['metric'] = [translate[m.strip()] for m in df['metric']]
 
-new_columns = ["Benchmark", "Platform", "Processes", "time", names["instructions"], names["cycles"], "CPI", "mem-request/inst"]
+new_columns = ["Benchmark", "Platform", "Processes", names["instructions"], names["cycles"], "CPI", "mem-request/inst"]
 new_df = []
 
 df['unique'] = [f"{r['benchmark']}-{r['platform']}-{r['id']}" for _, r in df.iterrows()]
+
 
 for job in np.unique(df['unique']):
     tmp_df = df.loc[df['unique'] == job]
@@ -42,6 +43,7 @@ for job in np.unique(df['unique']):
 
     platform = r['platform'].values[0]
     benchmark = r['benchmark'].values[0]
+    
     if benchmark not in ['S1', "S2", "W1"]:
         continue
     tasks = r['tasks'].values[0]
@@ -51,13 +53,6 @@ for job in np.unique(df['unique']):
     c = tmp_df.loc[tmp_df['metric'] == names['cycles']]['sum'].values[0] / scaling
     cpi = (c / i) 
     c = c / tasks
-
-    err = 0
-    try:
-        t = tmp_df.loc[tmp_df['metric'] == names["runtime"]]['avg'].values[0]
-    except:
-        continue
-
 
     ca = dpi = 0
     if names["l1_accesses"] in tmp_df['metric'].values:
@@ -73,7 +68,7 @@ for job in np.unique(df['unique']):
         # c = c / tasks
 
     r = tmp_df.loc[tmp_df['metric'] == names['cycles']]
-    new_df.append([benchmark, platform, tasks, t, i, c, cpi, dpi])
+    new_df.append([benchmark, platform, tasks, i, c, cpi, dpi])
 
 new_df = pd.DataFrame(new_df, columns=new_columns)
 new_df = new_df.groupby(['Platform', 'Processes', "Benchmark"]).mean()
@@ -107,5 +102,22 @@ for p in new_df['Platform']:
 new_df['Platform'] = new_platform
 
 latex_str = new_df.style.format().hide(axis="index").to_latex(hrules=True, column_format='lrrrrr')
+
+latex_str = latex_str.split("\midrule")
+latex_str[0] = r"""
+\begin{minipage}{\columnwidth}
+        \renewcommand\footnoterule{}
+        \renewcommand{\thefootnote}{\alph{footnote}}
+\centering
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Processor & NP & \makecell[r]{\#~Inst.\\$\times 10^{12}$} & \makecell[r]{\#~Cycles\\$\times 10^{12}$} & CPI & \makecell[r]{M. Op. \\ / Inst.} \\"""
+
+latex_str = "\n\midrule\n".join(latex_str)
+latex_str += r"""\footnotetext[1]{For the \textit{Intel SRP} processor we can only measure the L1 loads.}
+\end{minipage}"""
+
+latex_str = latex_str.replace("*", r"\footnotemark[1]")
+
 with open(snakemake.output["tex"], "w") as file1:
     file1.write(latex_str)
